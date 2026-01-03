@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import * as SimpleIcons from "simple-icons";
+import Image from "next/image";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -275,43 +275,35 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
-              { name: "Salesforce", iconKey: "siSalesforce" },
-              { name: "HubSpot", iconKey: "siHubspot" },
-              { name: "Zapier", iconKey: "siZapier" },
-              { name: "Monday.com", iconKey: "siMondaydotcom" },
-              { name: "Pipedrive", iconKey: "siPipedrive" },
-              { name: "Google Sheets", iconKey: "siGooglesheets" },
-              { name: "GoHighLevel", iconKey: null },
-              { name: "JobNimbus", iconKey: null },
-              { name: "Housecall Pro", iconKey: null },
-              { name: "Acculynx", iconKey: null },
-              { name: "Enerflo", iconKey: null },
-              { name: "Leap", iconKey: null },
-              { name: "Subcontractor Hub", iconKey: null },
-            ].map((software) => {
-              const icon = software.iconKey ? (SimpleIcons as any)[software.iconKey] : null;
-
-              return (
-                <div
-                  key={software.name}
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition flex flex-col items-center justify-center gap-3"
-                >
-                  {icon && (
-                    <svg
-                      role="img"
-                      viewBox="0 0 24 24"
-                      className="w-10 h-10"
-                      fill={`#${icon.hex}`}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <title>{icon.title}</title>
-                      <path d={icon.path} />
-                    </svg>
-                  )}
-                  <span className="text-gray-700 font-semibold text-center text-sm">{software.name}</span>
+              { name: "Salesforce", logo: "/logos/salesforce.svg" },
+              { name: "HubSpot", logo: "/logos/hubspot.jpeg" },
+              { name: "Zapier", logo: "/logos/zapier.jpeg" },
+              { name: "Monday.com", logo: "/logos/monday.com.svg" },
+              { name: "Pipedrive", logo: "/logos/pipedrive.svg" },
+              { name: "Google Sheets", logo: "/logos/google-sheets.png" },
+              { name: "GoHighLevel", logo: "/logos/gohighlevel-2.png" },
+              { name: "JobNimbus", logo: "/logos/jobnimbus.jpeg" },
+              { name: "Housecall Pro", logo: "/logos/housecallpro.jpeg" },
+              { name: "Acculynx", logo: "/logos/acculynx.jpeg" },
+              { name: "Enerflo", logo: "/logos/enerflo.png" },
+              { name: "Leap", logo: "/logos/leap.png" },
+              { name: "Subcontractor Hub", logo: "/logos/subcontractor-hub.jpeg" },
+            ].map((software) => (
+              <div
+                key={software.name}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition flex flex-col items-center justify-center gap-3"
+              >
+                <div className="relative w-16 h-16">
+                  <Image
+                    src={software.logo}
+                    alt={`${software.name} logo`}
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-              );
-            })}
+                <span className="text-gray-700 font-semibold text-center text-sm">{software.name}</span>
+              </div>
+            ))}
           </div>
 
           <div className="mt-12 text-center">
