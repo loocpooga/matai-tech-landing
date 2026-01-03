@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import * as SimpleIcons from "simple-icons";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -274,27 +275,43 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
-              "Salesforce",
-              "HubSpot",
-              "Zapier",
-              "Monday.com",
-              "Pipedrive",
-              "Google Sheets",
-              "GoHighLevel",
-              "JobNimbus",
-              "Housecall Pro",
-              "Acculynx",
-              "Enerflo",
-              "Leap",
-              "Subcontractor Hub",
-            ].map((software) => (
-              <div
-                key={software}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition flex items-center justify-center"
-              >
-                <span className="text-gray-700 font-semibold text-center">{software}</span>
-              </div>
-            ))}
+              { name: "Salesforce", iconKey: "siSalesforce" },
+              { name: "HubSpot", iconKey: "siHubspot" },
+              { name: "Zapier", iconKey: "siZapier" },
+              { name: "Monday.com", iconKey: "siMondaydotcom" },
+              { name: "Pipedrive", iconKey: "siPipedrive" },
+              { name: "Google Sheets", iconKey: "siGooglesheets" },
+              { name: "GoHighLevel", iconKey: null },
+              { name: "JobNimbus", iconKey: null },
+              { name: "Housecall Pro", iconKey: null },
+              { name: "Acculynx", iconKey: null },
+              { name: "Enerflo", iconKey: null },
+              { name: "Leap", iconKey: null },
+              { name: "Subcontractor Hub", iconKey: null },
+            ].map((software) => {
+              const icon = software.iconKey ? (SimpleIcons as any)[software.iconKey] : null;
+
+              return (
+                <div
+                  key={software.name}
+                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition flex flex-col items-center justify-center gap-3"
+                >
+                  {icon && (
+                    <svg
+                      role="img"
+                      viewBox="0 0 24 24"
+                      className="w-10 h-10"
+                      fill={`#${icon.hex}`}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <title>{icon.title}</title>
+                      <path d={icon.path} />
+                    </svg>
+                  )}
+                  <span className="text-gray-700 font-semibold text-center text-sm">{software.name}</span>
+                </div>
+              );
+            })}
           </div>
 
           <div className="mt-12 text-center">
