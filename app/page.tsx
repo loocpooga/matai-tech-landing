@@ -272,20 +272,21 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
               "Salesforce",
               "HubSpot",
-              "Slack",
-              "QuickBooks",
-              "Shopify",
-              "Stripe",
-              "Google Workspace",
-              "Microsoft 365",
               "Zapier",
-              "Airtable",
-              "Notion",
-              "Asana",
+              "Monday.com",
+              "Pipedrive",
+              "Google Sheets",
+              "GoHighLevel",
+              "JobNimbus",
+              "Housecall Pro",
+              "Acculynx",
+              "Enerflo",
+              "Leap",
+              "Subcontractor Hub",
             ].map((software) => (
               <div
                 key={software}
