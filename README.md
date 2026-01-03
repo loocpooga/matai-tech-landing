@@ -114,7 +114,7 @@ Edit `app/page.tsx` to update:
 
 ### Email
 
-Update the placeholder email `info@mataitech.com` in the footer to your actual business email.
+Business email is set to `luke@mataitech.co` in the footer.
 
 ## Project Structure
 
@@ -147,4 +147,4 @@ Private - All rights reserved by Matai Tech LLC
 
 ## Support
 
-For questions or issues, contact: info@mataitech.com
+For questions or issues, contact: luke@mataitech.co

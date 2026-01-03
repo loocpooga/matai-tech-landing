@@ -466,7 +466,11 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Email: info@mataitech.com</li>
+                <li>
+                  <a href="mailto:luke@mataitech.co" className="hover:text-white transition">
+                    luke@mataitech.co
+                  </a>
+                </li>
                 <li>Available for consultations</li>
               </ul>
             </div>
