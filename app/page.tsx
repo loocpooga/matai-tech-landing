@@ -15,12 +15,38 @@ export default function Home() {
     e.preventDefault();
     setFormStatus("submitting");
 
-    // Simulate form submission - replace with actual API call
-    setTimeout(() => {
-      setFormStatus("success");
-      setFormData({ name: "", email: "", company: "", message: "" });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "02927c79-7bd3-4949-9540-863dc1e7a34c",
+          subject: "New Contact Form Submission from Matai Tech",
+          from_name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setFormStatus("success");
+        setFormData({ name: "", email: "", company: "", message: "" });
+        setTimeout(() => setFormStatus("idle"), 5000);
+      } else {
+        setFormStatus("error");
+        setTimeout(() => setFormStatus("idle"), 5000);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setFormStatus("error");
       setTimeout(() => setFormStatus("idle"), 5000);
-    }, 1000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
