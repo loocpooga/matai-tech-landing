@@ -71,10 +71,12 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#contact"
+              href="https://cal.com/luke-pauga-hlurq5/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition shadow-lg hover:shadow-xl"
             >
-              Schedule a Consultation
+              Schedule a 30-Min Call
             </a>
             <a
               href="#services"
@@ -347,9 +349,18 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-primary-100">
+            <p className="text-xl text-primary-100 mb-6">
               Let's discuss how automation can save you time and money
             </p>
+            <a
+              href="https://cal.com/luke-pauga-hlurq5/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-primary-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-50 transition shadow-lg mb-6"
+            >
+              Schedule a 30-Minute Call
+            </a>
+            <p className="text-primary-100 text-lg">or send us a message below</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
@@ -471,7 +482,16 @@ export default function Home() {
                     luke@mataitech.co
                   </a>
                 </li>
-                <li>Available for consultations</li>
+                <li>
+                  <a
+                    href="https://cal.com/luke-pauga-hlurq5/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition"
+                  >
+                    Schedule a call
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
