@@ -140,7 +140,7 @@ export default function Home() {
                 </h2>
                 <div className="space-y-4 text-lg text-gray-700">
                   <p>
-                    As a data engineer working with operations-heavy industries, I've witnessed the same pattern repeatedly: <span className="font-semibold text-gray-900">far too much manual work and disconnected tools</span> costing businesses thousands in lost time and productivity.
+                    My name is Luke, and as a data engineer working with operations-heavy industries, I've witnessed the same pattern repeatedly: <span className="font-semibold text-gray-900">far too much manual work and disconnected tools</span> costing businesses thousands in lost time and productivity.
                   </p>
                   <p>
                     Companies struggle with data trapped in silos, teams manually transferring information between systems, and leaders lacking visibility into where inefficiencies lie. These aren't just minor inconveniences—they're <span className="font-semibold text-gray-900">massive drains on resources that directly impact your bottom line</span>.
