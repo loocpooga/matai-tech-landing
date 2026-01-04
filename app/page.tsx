@@ -336,51 +336,51 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Case Study 1 */}
+            {/* Case Study 1 - Marquis Pools */}
             <div className="bg-gradient-to-br from-primary-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-              <div className="text-primary-600 font-bold text-sm mb-2">E-COMMERCE</div>
+              <div className="text-primary-600 font-bold text-sm mb-2">POOL CONSTRUCTION</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                75% Reduction in Order Processing Time
+                Custom Project Tracker Saves 10+ Hours Weekly
               </h3>
               <p className="text-gray-600 mb-6">
-                Automated order fulfillment workflows connecting Shopify, inventory management, and shipping providers. Eliminated manual data entry and reduced errors by 95%.
+                Built a custom web application for Marquis Pools to manage estimates and construction projects. Automated pipeline tracking, reminders, and status updates replaced manual spreadsheets, eliminating double-entry and missed follow-ups.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Shopify</span>
-                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">APIs</span>
+                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">React</span>
+                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Node.js</span>
                 <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Automation</span>
               </div>
             </div>
 
-            {/* Case Study 2 */}
+            {/* Case Study 2 - Monday.com Integration */}
             <div className="bg-gradient-to-br from-accent-50 to-teal-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-              <div className="text-accent-600 font-bold text-sm mb-2">PROFESSIONAL SERVICES</div>
+              <div className="text-accent-600 font-bold text-sm mb-2">OPERATIONS</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Custom Dashboard Reveals $50K in Savings
+                Monday.com Integration Eliminates Manual Data Entry
               </h3>
               <p className="text-gray-600 mb-6">
-                Built real-time analytics dashboard aggregating data from QuickBooks, project management, and CRM. Client identified inefficiencies saving thousands monthly.
+                Connected Monday.com project boards to client's accounting software and customer database. Automated status updates and invoice generation, saving 15+ hours per week and reducing errors by 90%.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">QuickBooks</span>
-                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Analytics</span>
-                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Reporting</span>
+                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Monday.com</span>
+                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">APIs</span>
+                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Integration</span>
               </div>
             </div>
 
-            {/* Case Study 3 */}
+            {/* Case Study 3 - Salesforce Integration */}
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-              <div className="text-purple-600 font-bold text-sm mb-2">REAL ESTATE</div>
+              <div className="text-purple-600 font-bold text-sm mb-2">SALES</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Automated Lead Management Increases Conversions 3x
+                Salesforce Integration Streamlines Lead Pipeline
               </h3>
               <p className="text-gray-600 mb-6">
-                Integrated CRM with marketing automation and property databases. Automated follow-ups and personalized outreach tripled lead-to-client conversion rate.
+                Integrated Salesforce CRM with marketing platforms and scheduling tools. Automated lead assignment, follow-up reminders, and reporting. Client closed 40% more deals with the same sales team size.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">HubSpot</span>
+                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Salesforce</span>
                 <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">CRM</span>
-                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Marketing</span>
+                <span className="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Workflows</span>
               </div>
             </div>
           </div>
