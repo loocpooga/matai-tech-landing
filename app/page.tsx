@@ -295,7 +295,6 @@ export default function Home() {
               { name: "Housecall Pro", logo: "/logos/housecallpro.jpeg" },
               { name: "Acculynx", logo: "/logos/acculynx.jpeg" },
               { name: "Enerflo", logo: "/logos/enerflo.png" },
-              { name: "Leap", logo: "/logos/leap.png" },
               { name: "Subcontractor Hub", logo: "/logos/subcontractor-hub.jpeg" },
             ].map((software) => (
               <div
