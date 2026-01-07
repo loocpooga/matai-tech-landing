@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import MataiChatWidget from "./components/MataiChatWidget";
 
 export const metadata: Metadata = {
   title: "Matai Tech | Business Automation & Consulting",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <MataiChatWidget />
       </body>
     </html>
   );
