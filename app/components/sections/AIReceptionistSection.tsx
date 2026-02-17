@@ -42,7 +42,7 @@ export default function AIReceptionistSection() {
             {/* Key benefits */}
             <ul className="space-y-3 mb-10">
               {[
-                "Speaks naturally—callers can't tell it's AI",
+                "Speaks smoothly and naturally in conversation",
                 "Books appointments directly into your calendar",
                 "Logs every call and lead to your CRM automatically",
                 "Sends SMS confirmations and follow-up reminders",

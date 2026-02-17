@@ -87,7 +87,7 @@ export default function IntegrationsSection() {
                       src={software.logo}
                       alt={`${software.name} logo`}
                       fill
-                      className="object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="object-contain transition-all duration-300"
                     />
                   </div>
                   <span className="text-[10px] text-slate-400 text-center font-medium group-hover:text-slate-600 transition-colors leading-tight">
