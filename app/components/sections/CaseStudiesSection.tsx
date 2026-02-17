@@ -3,6 +3,7 @@
 import React from "react";
 import { useInView } from "../../hooks/useInView";
 import Badge from "../ui/Badge";
+import ProjectPipeline from "../ui/ProjectPipeline";
 
 const techTagClass =
   "px-3 py-1 bg-slate-50 border border-slate-200 text-slate-500 text-xs font-medium rounded-badge hover:bg-slate-100 transition-colors";
@@ -77,18 +78,9 @@ export default function CaseStudiesSection() {
                 </div>
               </div>
 
-              {/* Project visual placeholder */}
-              <div className="bg-bg-secondary rounded-card h-56 flex items-center justify-center border border-slate-100 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-mesh opacity-60" />
-                <div className="text-center relative z-10">
-                  <div className="text-4xl mb-3">📊</div>
-                  <div className="text-slate-500 font-medium text-sm">
-                    Project Dashboard
-                  </div>
-                  <div className="font-mono text-xs text-slate-400 mt-1">
-                    Custom Web App
-                  </div>
-                </div>
+              {/* Project pipeline mockup */}
+              <div className="overflow-hidden rounded-card shadow-card">
+                <ProjectPipeline />
               </div>
             </div>
           </div>
