@@ -1,148 +1,251 @@
 (function () {
-  // Matai Tech Chat Widget Embed Script
   var MataiChat = {
     config: {
       position: "bottom-right",
-      primaryColor: "#3b82f6",
+      primaryColor: "#0A6E6E",
       baseUrl: "https://matai-ai-agent.vercel.app",
     },
+    isOpen: false,
 
     init: function (options) {
-      // Merge options with defaults
       this.config = { ...this.config, ...options };
-
-      // Create widget container
       this.createWidget();
-
-      // Add styles
       this.addStyles();
     },
 
     createWidget: function () {
-      // Create bubble button
+      // --- Bubble button ---
       var bubble = document.createElement("div");
       bubble.id = "matai-chat-bubble";
+      bubble.setAttribute("aria-label", "Open AI assistant");
+      bubble.setAttribute("role", "button");
+      bubble.setAttribute("tabindex", "0");
+
       bubble.innerHTML = `
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12C2 13.93 2.6 15.72 3.63 17.2L2.05 21.95L7.2 20.63C8.68 21.6 10.47 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="white"/>
-        </svg>
+        <span id="matai-bubble-inner" class="matai-bubble-closed">
+          <span class="matai-bubble-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
+            </svg>
+          </span>
+          <span class="matai-bubble-label">Ask AI</span>
+          <span class="matai-bubble-dot"></span>
+        </span>
+        <span id="matai-bubble-close" class="matai-bubble-x" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </span>
       `;
 
-      // Create iframe container
+      // --- Chat container ---
       var container = document.createElement("div");
       container.id = "matai-chat-container";
-      container.style.display = "none";
 
-      // Create iframe
       var iframe = document.createElement("iframe");
       iframe.id = "matai-chat-iframe";
       iframe.src = this.config.baseUrl + "/widget";
       iframe.allow = "clipboard-write";
+      iframe.setAttribute("title", "Matai AI Assistant");
 
       container.appendChild(iframe);
-
-      // Add to page
       document.body.appendChild(bubble);
       document.body.appendChild(container);
 
-      // Add click handler
       var self = this;
-      bubble.addEventListener("click", function () {
-        self.toggleChat();
+      bubble.addEventListener("click", function () { self.toggleChat(); });
+      bubble.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); self.toggleChat(); }
       });
     },
 
     addStyles: function () {
       var style = document.createElement("style");
-      var position = this.config.position;
       var primaryColor = this.config.primaryColor;
-
-      // Determine position styles
-      var positionStyles = "";
-      if (position === "bottom-right") {
-        positionStyles = "bottom: 20px; right: 20px;";
-      } else if (position === "bottom-left") {
-        positionStyles = "bottom: 20px; left: 20px;";
-      }
+      var pos = this.config.position === "bottom-left"
+        ? "bottom: 24px; left: 24px;"
+        : "bottom: 24px; right: 24px;";
+      var containerPos = this.config.position === "bottom-left"
+        ? "bottom: 96px; left: 24px;"
+        : "bottom: 96px; right: 24px;";
 
       style.textContent = `
-        @keyframes matai-pulse {
-          0%, 100% {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(59, 130, 246, 0.7);
-          }
-          50% {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 10px rgba(59, 130, 246, 0);
-          }
+        @keyframes matai-dot-pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.6; transform: scale(0.85); }
         }
 
-        @keyframes matai-bounce {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-5px);
-          }
+        @keyframes matai-slide-up {
+          from { opacity: 0; transform: translateY(12px) scale(0.97); }
+          to   { opacity: 1; transform: translateY(0)   scale(1); }
         }
 
+        /* ---- Bubble ---- */
         #matai-chat-bubble {
           position: fixed;
-          ${positionStyles}
-          width: 60px;
-          height: 60px;
-          background: ${primaryColor};
-          border-radius: 30px;
+          ${pos}
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-          transition: all 0.3s ease;
           z-index: 999999;
-          animation: matai-pulse 2s infinite;
+          outline: none;
+          border: none;
+          background: none;
+          padding: 0;
+          -webkit-tap-highlight-color: transparent;
         }
 
-        #matai-chat-bubble:hover {
-          transform: scale(1.1);
-          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-          animation: matai-pulse 2s infinite, matai-bounce 0.5s ease;
+        /* Pill default state */
+        #matai-bubble-inner {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background: ${primaryColor};
+          color: white;
+          padding: 0 18px 0 14px;
+          height: 48px;
+          border-radius: 24px;
+          box-shadow: 0 4px 20px rgba(10, 110, 110, 0.35);
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          user-select: none;
+          position: relative;
+          overflow: hidden;
         }
 
+        #matai-bubble-inner::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: white;
+          opacity: 0;
+          border-radius: inherit;
+          transition: opacity 0.2s ease;
+        }
+
+        #matai-chat-bubble:hover #matai-bubble-inner::before,
+        #matai-chat-bubble:focus-visible #matai-bubble-inner::before {
+          opacity: 0.08;
+        }
+
+        #matai-chat-bubble:hover #matai-bubble-inner {
+          box-shadow: 0 6px 28px rgba(10, 110, 110, 0.45);
+          transform: translateY(-1px);
+        }
+
+        #matai-chat-bubble:active #matai-bubble-inner {
+          transform: translateY(0) scale(0.97);
+        }
+
+        .matai-bubble-icon {
+          display: flex;
+          align-items: center;
+          flex-shrink: 0;
+        }
+
+        .matai-bubble-label {
+          font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0.01em;
+          white-space: nowrap;
+          transition: opacity 0.2s ease, width 0.25s ease;
+          overflow: hidden;
+        }
+
+        .matai-bubble-dot {
+          width: 7px;
+          height: 7px;
+          background: #4ade80;
+          border-radius: 50%;
+          flex-shrink: 0;
+          animation: matai-dot-pulse 2.5s ease-in-out infinite;
+          box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.25);
+        }
+
+        /* Close X — hidden by default */
+        #matai-bubble-close {
+          display: none;
+          align-items: center;
+          justify-content: center;
+          background: ${primaryColor};
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          box-shadow: 0 4px 20px rgba(10, 110, 110, 0.35);
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+        }
+
+        #matai-bubble-close::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: white;
+          opacity: 0;
+          border-radius: inherit;
+          transition: opacity 0.2s ease;
+        }
+
+        #matai-chat-bubble:hover #matai-bubble-close::before {
+          opacity: 0.08;
+        }
+
+        #matai-chat-bubble:hover #matai-bubble-close {
+          box-shadow: 0 6px 28px rgba(10, 110, 110, 0.45);
+          transform: translateY(-1px);
+        }
+
+        #matai-chat-bubble.matai-open #matai-bubble-inner {
+          display: none;
+        }
+
+        #matai-chat-bubble.matai-open #matai-bubble-close {
+          display: flex;
+        }
+
+        /* ---- Chat container ---- */
         #matai-chat-container {
           position: fixed;
-          ${positionStyles}
+          ${containerPos}
           width: 400px;
           height: 600px;
-          max-width: 90vw;
-          max-height: 90vh;
+          max-width: calc(100vw - 48px);
+          max-height: calc(100vh - 112px);
           background: white;
           border-radius: 16px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 12px 48px rgba(15, 15, 15, 0.18), 0 2px 12px rgba(15, 15, 15, 0.1);
           overflow: hidden;
           z-index: 999998;
-          transition: all 0.3s ease;
+          display: none;
+          border: 1px solid rgba(15, 15, 15, 0.06);
         }
 
         #matai-chat-container.open {
           display: block !important;
+          animation: matai-slide-up 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         #matai-chat-iframe {
           width: 100%;
           height: 100%;
           border: none;
+          display: block;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
           #matai-chat-container {
             width: 100vw;
-            height: 100vh;
+            height: 100svh;
             max-width: 100vw;
-            max-height: 100vh;
+            max-height: 100svh;
             bottom: 0 !important;
             right: 0 !important;
             left: 0 !important;
             top: 0 !important;
             border-radius: 0;
+            border: none;
           }
         }
       `;
@@ -154,14 +257,17 @@
       var container = document.getElementById("matai-chat-container");
       var bubble = document.getElementById("matai-chat-bubble");
 
-      if (container.classList.contains("open")) {
+      if (this.isOpen) {
         container.classList.remove("open");
         container.style.display = "none";
-        bubble.style.display = "flex";
+        bubble.classList.remove("matai-open");
+        bubble.setAttribute("aria-label", "Open AI assistant");
+        this.isOpen = false;
       } else {
         container.classList.add("open");
-        container.style.display = "block";
-        bubble.style.display = "none";
+        bubble.classList.add("matai-open");
+        bubble.setAttribute("aria-label", "Close AI assistant");
+        this.isOpen = true;
       }
     },
 
@@ -171,26 +277,25 @@
 
       container.classList.remove("open");
       container.style.display = "none";
-      bubble.style.display = "flex";
+      bubble.classList.remove("matai-open");
+      bubble.setAttribute("aria-label", "Open AI assistant");
+      this.isOpen = false;
     },
   };
 
-  // Expose globally
   window.MataiChat = MataiChat;
 
-  // Listen for messages from the iframe
   window.addEventListener("message", function (event) {
-    if (event.data.type === "CLOSE_CHAT") {
+    if (event.data && event.data.type === "CLOSE_CHAT") {
       MataiChat.closeChat();
     }
   });
 
-  // Auto-init if data attributes present
   var script = document.currentScript;
   if (script && script.hasAttribute("data-auto-init")) {
     MataiChat.init({
       position: script.getAttribute("data-position") || "bottom-right",
-      primaryColor: script.getAttribute("data-color") || "#2563eb",
+      primaryColor: script.getAttribute("data-color") || "#0A6E6E",
     });
   }
 })();
