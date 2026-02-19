@@ -3,6 +3,7 @@ import Footer from "./components/layout/Footer";
 import HeroSection from "./components/sections/HeroSection";
 import AboutSection from "./components/sections/AboutSection";
 import ServicesSection from "./components/sections/ServicesSection";
+import WebsiteSection from "./components/sections/WebsiteSection";
 import WorkflowSection from "./components/sections/WorkflowSection";
 import AIReceptionistSection from "./components/sections/AIReceptionistSection";
 import IntegrationsSection from "./components/sections/IntegrationsSection";
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <WebsiteSection />
       <WorkflowSection />
       <AIReceptionistSection />
       <IntegrationsSection />
