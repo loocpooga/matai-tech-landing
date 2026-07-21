@@ -19,7 +19,7 @@ export default function ContactSection() {
             Tell me where the hours are going.
           </h2>
           <p className="text-on-dark-soft mb-8 max-w-xl mx-auto">
-            The easiest way is a 30-minute call — you talk, I ask questions,
+            The easiest way is a 30-minute call. You talk, I ask questions,
             and you&apos;ll leave knowing whether this is worth doing.
           </p>
 

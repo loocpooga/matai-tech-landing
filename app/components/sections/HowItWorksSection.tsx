@@ -5,17 +5,17 @@ const steps = [
   {
     number: "01",
     title: "We talk for 30 minutes",
-    body: "You walk me through how a job moves through your business — from first call to final invoice — and where things slip. If I can't help, I'll say so on the call.",
+    body: "You walk me through how a job moves through your business, from first call to final invoice, and where things slip. If I can't help, I'll say so on the call.",
   },
   {
     number: "02",
     title: "I map it and build the fix",
-    body: "I find the one connection worth the most and quote it at a fixed price. Then I build it — usually a few weeks, not months. You'll see it working on your real jobs before you pay the balance.",
+    body: "I find the one connection worth the most and quote it at a fixed price. Then I build it, usually in a few weeks, not months. You'll see it working on your real jobs before you pay the balance.",
   },
   {
     number: "03",
     title: "You run it, I keep it running",
-    body: "You get a plain-English walkthrough of what's connected and how. When a tool updates and something breaks, I hear about it before you do — and fix it.",
+    body: "You get a plain-English walkthrough of what's connected and how. When a tool updates and something breaks, I hear about it before you do, and I fix it.",
   },
 ];
 

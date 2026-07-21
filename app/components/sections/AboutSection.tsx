@@ -29,7 +29,7 @@ export default function AboutSection() {
               </div>
 
               <h2 className="text-3xl md:text-4xl text-ink mb-6 text-balance">
-                Hi, I&apos;m Luke. Matai Tech is just me — that&apos;s the
+                Hi, I&apos;m Luke. Matai Tech is just me. That&apos;s the
                 point.
               </h2>
 
@@ -37,7 +37,7 @@ export default function AboutSection() {
                 <p>
                   I&apos;m a data engineer by trade. I&apos;ve spent years
                   building CRM integrations and data systems for trades
-                  companies — roofing, solar, home services — and I kept seeing
+                  companies (roofing, solar, home services) and I kept seeing
                   the same thing: good crews, good work, and an office drowning
                   in retyping, chasing, and Sunday-night admin.
                 </p>
@@ -49,7 +49,7 @@ export default function AboutSection() {
                 </p>
                 <p>
                   If you&apos;d rather talk to the person who actually does the
-                  work — that&apos;s the whole pitch.
+                  work, that&apos;s the whole pitch.
                 </p>
               </div>
             </div>

@@ -16,7 +16,7 @@ export default function CaseStudySection() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="text-xs text-ink-muted mb-3">
-                Marquis Pools — pool construction
+                Marquis Pools · pool construction
               </div>
               <h2 className="text-3xl md:text-4xl text-ink mb-6 text-balance">
                 A pool builder&apos;s pipeline, out of the spreadsheet.
@@ -24,7 +24,7 @@ export default function CaseStudySection() {
               <div className="space-y-4 text-ink-soft leading-relaxed">
                 <p>
                   Marquis was running estimates and active builds out of
-                  spreadsheets — statuses went stale, payment milestones got
+                  spreadsheets. Statuses went stale, payment milestones got
                   chased by memory, and every update meant retyping.
                 </p>
                 <p>

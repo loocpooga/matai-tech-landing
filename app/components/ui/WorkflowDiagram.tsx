@@ -55,7 +55,7 @@ export default function WorkflowDiagram() {
             }`}
           />
           <span className="text-xs text-on-dark-soft">
-            Lead-to-close workflow — demo run, dummy data
+            Lead-to-close workflow. Demo run, dummy data
           </span>
         </div>
         <span className="font-mono text-[10px] text-on-dark-soft/70">

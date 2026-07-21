@@ -4,7 +4,7 @@ import Reveal from "../ui/Reveal";
 const primaryPoints = [
   {
     title: "Connect the systems you already have",
-    body: "Your CRM, your spreadsheets, your accounting software, your field tools — talking to each other, so a job entered once shows up everywhere it needs to.",
+    body: "Your CRM, your spreadsheets, your accounting software, your field tools, all talking to each other, so a job entered once shows up everywhere it needs to.",
   },
   {
     title: "Automate the busywork between them",
@@ -19,7 +19,7 @@ const primaryPoints = [
 const alsoBuild = [
   "Simple internal tools and dashboards when a spreadsheet stops being enough",
   "A website that actually captures and routes leads (this one's mine)",
-  "An AI phone answerer — I've built a working prototype, happy to talk about whether it fits",
+  "An AI phone answerer. I've built a working prototype, happy to talk about whether it fits",
 ];
 
 export default function WhatIDoSection() {
@@ -42,8 +42,8 @@ export default function WhatIDoSection() {
               </h2>
               <p className="text-ink-soft leading-relaxed mb-8">
                 Systems integration and ops automation for trades companies.
-                That&apos;s the whole offer. Not a platform, not a subscription —
-                me, building the connections your business is missing.
+                That&apos;s the whole offer. Not a platform, not a subscription.
+                Just me, building the connections your business is missing.
               </p>
               <Button
                 variant="primary"
@@ -83,7 +83,7 @@ export default function WhatIDoSection() {
                       key={item}
                       className="text-sm text-ink-muted leading-relaxed flex gap-3"
                     >
-                      <span className="text-bg-border mt-0.5">—</span>
+                      <span className="text-bg-border mt-0.5">·</span>
                       {item}
                     </li>
                   ))}

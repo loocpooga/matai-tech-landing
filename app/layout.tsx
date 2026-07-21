@@ -18,7 +18,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Matai Tech | Automation for trades businesses",
   description:
-    "I'm Luke. I connect the CRMs, spreadsheets, and tools your trades business already runs — roofing, solar, HVAC, windows, pools — so leads stop slipping and nobody retypes the same job into three places.",
+    "I'm Luke. I connect the CRMs, spreadsheets, and tools your trades business already runs, so leads stop slipping and nobody retypes the same job into three places. Roofing, solar, HVAC, windows, pools.",
   keywords: [
     "trades business automation",
     "CRM integration",

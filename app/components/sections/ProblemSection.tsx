@@ -15,7 +15,7 @@ const pains = [
   },
   {
     title: "You're doing admin on Sunday night.",
-    body: "Invoices, job statuses, chasing paperwork — the stuff that keeps the business running but nobody's paying you for.",
+    body: "Invoices, job statuses, chasing paperwork. The stuff that keeps the business running but nobody's paying you for.",
   },
 ];
 

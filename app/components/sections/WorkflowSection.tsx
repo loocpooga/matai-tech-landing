@@ -18,8 +18,8 @@ export default function WorkflowSection() {
               This is what &quot;automated&quot; actually looks like.
             </h2>
             <p className="text-ink-soft leading-relaxed">
-              A lead-to-close flow I built as a working demo — my own asset,
-              running on dummy data. A lead comes in, lands in the CRM, gets
+              A lead-to-close flow I built as a working demo. It&apos;s my own
+              asset, running on dummy data. A lead comes in, lands in the CRM, gets
               assigned, gets a text, gets a follow-up. Nobody touched anything.
             </p>
           </div>
@@ -31,12 +31,12 @@ export default function WorkflowSection() {
               {
                 title: "Fires the moment a lead arrives",
                 description:
-                  "Form fill, phone call, or referral — the flow starts before anyone's seen the notification.",
+                  "Form fill, phone call, or referral: the flow starts before anyone's seen the notification.",
               },
               {
                 title: "Branches on real conditions",
                 description:
-                  "Won, not ready, no-show — each path gets its own next step instead of falling into a pile.",
+                  "Won, not ready, no-show: each path gets its own next step instead of falling into a pile.",
               },
               {
                 title: "Everything stays in sync",

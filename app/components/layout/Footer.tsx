@@ -18,7 +18,7 @@ export default function Footer() {
             </div>
             <p className="text-on-dark-soft text-sm leading-relaxed max-w-sm">
               Systems and automation for trades businesses. One person, doing
-              the work directly — connecting the tools you already run so leads
+              the work directly, connecting the tools you already run so leads
               stop slipping.
             </p>
           </div>

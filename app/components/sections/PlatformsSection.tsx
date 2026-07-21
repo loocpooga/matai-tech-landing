@@ -51,7 +51,7 @@ export default function PlatformsSection() {
                 Your software probably isn&apos;t the problem.
               </h2>
               <p className="text-on-dark-soft leading-relaxed mb-6 text-sm">
-                These are platforms I&apos;ve actually built in — not a logo
+                These are platforms I&apos;ve actually built in, not a logo
                 wall. The tools are usually fine. It&apos;s the gaps between
                 them where leads and hours go missing.
               </p>
@@ -62,8 +62,8 @@ export default function PlatformsSection() {
                   className="text-on-dark underline decoration-ember decoration-1 underline-offset-4 hover:text-ember transition-colors"
                 >
                   Ask me
-                </a>{" "}
-                — if it has an API, or even just exports a spreadsheet, I can
+                </a>
+                . If it has an API, or even just exports a spreadsheet, I can
                 probably work with it.
               </p>
             </div>

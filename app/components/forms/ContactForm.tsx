@@ -131,7 +131,7 @@ export default function ContactForm() {
           onChange={handleChange}
           rows={5}
           className={`${inputClass} resize-none`}
-          placeholder="The tools you're running, the thing that keeps slipping, or just 'we're retyping everything twice' — whatever's true."
+          placeholder="The tools you're running, the thing that keeps slipping, or just 'we're retyping everything twice'. Whatever's true."
         />
       </div>
 
@@ -147,7 +147,7 @@ export default function ContactForm() {
 
       {formStatus === "success" && (
         <div className="bg-ember/10 border border-ember/30 text-ember-deep px-4 py-3 rounded-md text-sm font-medium">
-          Got it — I read every message and I&apos;ll get back to you within a
+          Got it. I read every message and I&apos;ll get back to you within a
           day.
         </div>
       )}

@@ -21,7 +21,7 @@ export default function HeroSection() {
 
           <p className="text-lg md:text-xl text-ink-soft mb-10 leading-relaxed max-w-2xl animate-fade-up delay-200">
             I&apos;m Luke. I connect the CRMs, spreadsheets, and tools your
-            business already runs — so leads stop slipping and nobody&apos;s
+            business already runs, so leads stop slipping and nobody&apos;s
             retyping the same job into three places.
           </p>
 
