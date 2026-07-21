@@ -1,40 +1,39 @@
 const footerLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#integrations", label: "Integrations" },
-  { href: "#case-studies", label: "Case Studies" },
+  { href: "#what-i-do", label: "What I do" },
+  { href: "#proof", label: "Proof" },
+  { href: "#platforms", label: "Platforms" },
+  { href: "#how-it-works", label: "How it works" },
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-bg-dark text-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <footer className="bg-ink text-on-dark py-16 px-5 sm:px-8">
+      <div className="max-w-content mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-2xl font-display font-semibold text-white mb-1">
-              Matai<span className="text-primary-light">.</span>
+            <div className="text-2xl font-display font-semibold text-on-dark mb-3">
+              Matai Tech<span className="text-ember">.</span>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
-              Professional automation and data engineering solutions for modern
-              businesses. Save time, reduce costs, and gain visibility into your
-              operations.
+            <p className="text-on-dark-soft text-sm leading-relaxed max-w-sm">
+              Systems and automation for trades businesses. One person, doing
+              the work directly — connecting the tools you already run so leads
+              stop slipping.
             </p>
-            {/* Accent bar */}
-            <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-accent-warm rounded-full" />
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-white mb-4 tracking-wide uppercase">
-              Quick Links
+            <h4 className="text-sm font-medium text-on-dark mb-4">
+              On this page
             </h4>
             <ul className="space-y-3">
               {footerLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-primary-light text-sm transition-colors duration-200"
+                    className="text-on-dark-soft hover:text-on-dark text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -45,14 +44,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-white mb-4 tracking-wide uppercase">
-              Contact
-            </h4>
+            <h4 className="text-sm font-medium text-on-dark mb-4">Reach me</h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:luke@mataitech.co"
-                  className="text-slate-400 hover:text-primary-light text-sm transition-colors duration-200"
+                  className="text-on-dark-soft hover:text-on-dark text-sm transition-colors duration-200"
                 >
                   luke@mataitech.co
                 </a>
@@ -62,9 +59,9 @@ export default function Footer() {
                   href="https://cal.com/luke-pauga-hlurq5/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-primary-light text-sm transition-colors duration-200"
+                  className="text-on-dark-soft hover:text-on-dark text-sm transition-colors duration-200"
                 >
-                  Schedule a call
+                  Book a 30-min call
                 </a>
               </li>
             </ul>
@@ -72,16 +69,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-mono text-xs text-slate-600">
+        <div className="border-t border-on-dark-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-on-dark-soft">
             &copy; {new Date().getFullYear()} Matai Tech LLC. All rights
             reserved.
           </p>
-          <div className="flex items-center gap-3 font-mono text-xs text-slate-700">
-            <span>EST. 2024</span>
-            <span className="w-1 h-1 bg-slate-700 rounded-full" />
-            <span>BUILT WITH PURPOSE</span>
-          </div>
+          <p className="text-xs text-on-dark-soft">
+            Built and run by one person, on purpose.
+          </p>
         </div>
       </div>
     </footer>

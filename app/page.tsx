@@ -1,27 +1,27 @@
 import Navigation from "./components/layout/Navigation";
 import Footer from "./components/layout/Footer";
 import HeroSection from "./components/sections/HeroSection";
-import AboutSection from "./components/sections/AboutSection";
-import ServicesSection from "./components/sections/ServicesSection";
-import WebsiteSection from "./components/sections/WebsiteSection";
+import ProblemSection from "./components/sections/ProblemSection";
+import WhatIDoSection from "./components/sections/WhatIDoSection";
+import CaseStudySection from "./components/sections/CaseStudySection";
 import WorkflowSection from "./components/sections/WorkflowSection";
-import AIReceptionistSection from "./components/sections/AIReceptionistSection";
-import IntegrationsSection from "./components/sections/IntegrationsSection";
-import CaseStudiesSection from "./components/sections/CaseStudiesSection";
+import PlatformsSection from "./components/sections/PlatformsSection";
+import HowItWorksSection from "./components/sections/HowItWorksSection";
+import AboutSection from "./components/sections/AboutSection";
 import ContactSection from "./components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-bg-paper">
+    <div className="min-h-screen bg-bg">
       <Navigation />
       <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <WebsiteSection />
+      <ProblemSection />
+      <WhatIDoSection />
+      <CaseStudySection />
       <WorkflowSection />
-      <AIReceptionistSection />
-      <IntegrationsSection />
-      <CaseStudiesSection />
+      <PlatformsSection />
+      <HowItWorksSection />
+      <AboutSection />
       <ContactSection />
       <Footer />
     </div>

@@ -34,7 +34,7 @@ export default function ContactForm() {
         },
         body: JSON.stringify({
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "02927c79-7bd3-4949-9540-863dc1e7a34c",
-          subject: "New Contact Form Submission from Matai Tech",
+          subject: "New contact form submission from mataitech.co",
           from_name: formData.name,
           email: formData.email,
           company: formData.company,
@@ -65,17 +65,16 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    "w-full px-4 py-3 bg-bg-paper border border-slate-200 text-text-primary rounded-card focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 placeholder:text-slate-400 font-sans text-sm";
+    "w-full px-4 py-3 bg-bg border border-bg-border text-ink rounded-md focus:border-ember focus:ring-1 focus:ring-ember/30 outline-none transition-all duration-200 placeholder:text-ink-muted text-sm";
 
-  const labelClass =
-    "block text-sm font-semibold text-slate-600 mb-2 tracking-wide";
+  const labelClass = "block text-sm font-medium text-ink-soft mb-2";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className={labelClass}>
-            Name <span className="text-accent-warm">*</span>
+            Name <span className="text-ember-deep">*</span>
           </label>
           <input
             type="text"
@@ -85,12 +84,12 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             className={inputClass}
-            placeholder="John Doe"
+            placeholder="Your name"
           />
         </div>
         <div>
           <label htmlFor="email" className={labelClass}>
-            Email <span className="text-accent-warm">*</span>
+            Email <span className="text-ember-deep">*</span>
           </label>
           <input
             type="email"
@@ -100,7 +99,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             className={inputClass}
-            placeholder="john@company.com"
+            placeholder="you@company.com"
           />
         </div>
       </div>
@@ -116,14 +115,13 @@ export default function ContactForm() {
           value={formData.company}
           onChange={handleChange}
           className={inputClass}
-          placeholder="Your Company Name"
+          placeholder="Your company"
         />
       </div>
 
       <div>
         <label htmlFor="message" className={labelClass}>
-          Tell us about your automation needs{" "}
-          <span className="text-accent-warm">*</span>
+          What&apos;s eating your week? <span className="text-ember-deep">*</span>
         </label>
         <textarea
           id="message"
@@ -133,7 +131,7 @@ export default function ContactForm() {
           onChange={handleChange}
           rows={5}
           className={`${inputClass} resize-none`}
-          placeholder="Describe the tasks you'd like to automate or the challenges you're facing..."
+          placeholder="The tools you're running, the thing that keeps slipping, or just 'we're retyping everything twice' — whatever's true."
         />
       </div>
 
@@ -142,20 +140,22 @@ export default function ContactForm() {
         variant="primary"
         size="lg"
         disabled={formStatus === "submitting"}
-        className="w-full disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+        className="w-full disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {formStatus === "submitting" ? "Sending..." : "Send Message"}
+        {formStatus === "submitting" ? "Sending..." : "Send it over"}
       </Button>
 
       {formStatus === "success" && (
-        <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-card text-sm font-medium">
-          ✓ Thank you! We&apos;ll get back to you within 24 hours.
+        <div className="bg-ember/10 border border-ember/30 text-ember-deep px-4 py-3 rounded-md text-sm font-medium">
+          Got it — I read every message and I&apos;ll get back to you within a
+          day.
         </div>
       )}
 
       {formStatus === "error" && (
-        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-card text-sm font-medium">
-          Something went wrong. Please try again or email us directly.
+        <div className="bg-ink/5 border border-bg-border text-ink-soft px-4 py-3 rounded-md text-sm font-medium">
+          Something went wrong. Try again, or just email me at
+          luke@mataitech.co.
         </div>
       )}
     </form>

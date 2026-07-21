@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#integrations", label: "Integrations" },
-  { href: "#case-studies", label: "Case Studies" },
-  { href: "#contact", label: "Contact" },
+  { href: "#what-i-do", label: "What I do" },
+  { href: "#proof", label: "Proof" },
+  { href: "#platforms", label: "Platforms" },
+  { href: "#how-it-works", label: "How it works" },
+  { href: "#about", label: "About" },
 ];
 
 export default function Navigation() {
@@ -22,28 +23,28 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 diagonal-accent ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
         scrolled
-          ? "bg-bg-paper/95 backdrop-blur-md shadow-card"
-          : "bg-bg-paper/80 backdrop-blur-sm"
+          ? "bg-bg/95 backdrop-blur-md border-bg-border"
+          : "bg-bg/80 backdrop-blur-sm border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-content mx-auto px-5 sm:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <span className="text-xl font-display font-semibold text-text-primary tracking-tight">
-              Matai<span className="text-primary">.</span>
+            <span className="text-xl font-display font-semibold text-ink tracking-tight">
+              Matai Tech<span className="text-ember">.</span>
             </span>
           </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="nav-link text-slate-500 hover:text-text-primary text-sm font-medium transition-colors duration-200"
+                className="nav-link text-ink-soft hover:text-ink text-sm transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -52,14 +53,20 @@ export default function Navigation() {
 
           {/* CTA */}
           <div className="hidden md:block">
-            <Button variant="primary" size="sm" href="#contact">
-              Get Started
+            <Button
+              variant="primary"
+              size="sm"
+              href="https://cal.com/luke-pauga-hlurq5/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a call
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-slate-500 hover:text-text-primary transition-colors"
+            className="md:hidden p-2 text-ink-soft hover:text-ink transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
@@ -92,13 +99,13 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-bg-paper border-t border-slate-100 shadow-card">
-          <div className="px-4 py-4 space-y-3">
+        <div className="md:hidden bg-bg border-t border-bg-border">
+          <div className="px-5 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block text-slate-500 hover:text-primary text-sm font-medium py-2 transition-colors"
+                className="block text-ink-soft hover:text-ink text-sm py-2 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
@@ -108,10 +115,12 @@ export default function Navigation() {
               <Button
                 variant="primary"
                 size="md"
-                href="#contact"
+                href="https://cal.com/luke-pauga-hlurq5/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full"
               >
-                Get Started
+                Book a call
               </Button>
             </div>
           </div>

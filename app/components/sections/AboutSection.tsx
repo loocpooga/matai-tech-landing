@@ -1,70 +1,60 @@
 import Image from "next/image";
+import Reveal from "../ui/Reveal";
 
 export default function AboutSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-bg-secondary">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-bg-elevated rounded-card p-8 md:p-12 shadow-float">
-          <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-center">
+    <section id="about" className="py-20 md:py-28 px-5 sm:px-8 bg-bg">
+      <div className="max-w-content mx-auto">
+        <Reveal>
+          <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
             {/* Photo */}
             <div className="w-full md:w-2/5 flex-shrink-0">
-              <div className="relative aspect-[3/4] w-full max-w-sm mx-auto rounded-card overflow-hidden shadow-float-lg">
+              <div className="relative aspect-[3/4] w-full max-w-sm mx-auto rounded-lg overflow-hidden border border-bg-border">
                 <Image
                   src="/images/about-photo.jpg"
-                  alt="Luke and his wife - Founders of Matai Tech"
+                  alt="Luke Pauga, founder of Matai Tech, with his wife"
                   fill
                   className="object-cover"
-                  priority
                 />
               </div>
             </div>
 
-            {/* Text Content */}
+            {/* Text */}
             <div className="flex-1">
-              {/* Section label */}
-              <div className="font-mono text-xs text-slate-400 uppercase tracking-widest mb-4">
-                Our Story
+              <div className="flex items-center gap-3 mb-7">
+                <span className="w-8 h-px bg-ember" />
+                <span className="text-sm text-ember-deep font-medium">
+                  About
+                </span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-display font-semibold text-text-primary mb-6">
-                Built by a Data Engineer Who&apos;s Seen the Problem Firsthand
+              <h2 className="text-3xl md:text-4xl text-ink mb-6 text-balance">
+                Hi, I&apos;m Luke. Matai Tech is just me — that&apos;s the
+                point.
               </h2>
 
-              <div className="space-y-4 text-base text-slate-500 leading-relaxed">
+              <div className="space-y-4 text-ink-soft leading-relaxed">
                 <p>
-                  My name is Luke, and as a data engineer working with
-                  operations-heavy industries, I&apos;ve witnessed the same
-                  pattern repeatedly:{" "}
-                  <span className="font-semibold text-text-primary">
-                    far too much manual work and disconnected tools
-                  </span>{" "}
-                  costing businesses thousands in lost time and productivity.
+                  I&apos;m a data engineer by trade. I&apos;ve spent years
+                  building CRM integrations and data systems for trades
+                  companies — roofing, solar, home services — and I kept seeing
+                  the same thing: good crews, good work, and an office drowning
+                  in retyping, chasing, and Sunday-night admin.
                 </p>
                 <p>
-                  Companies struggle with data trapped in silos, teams manually
-                  transferring information between systems, and leaders lacking
-                  visibility into where inefficiencies lie. These aren&apos;t
-                  just minor inconveniences—they&apos;re{" "}
-                  <span className="font-semibold text-text-primary">
-                    massive drains on resources that directly impact your bottom
-                    line
-                  </span>
-                  .
+                  Matai Tech is where I do that work directly for owners. No
+                  account managers, no handoffs, no junior dev you&apos;ve never
+                  met. The person on the first call is the person writing the
+                  code and the person answering when something breaks.
                 </p>
-
-                {/* Callout */}
-                <div className="bg-primary/5 border-l-4 border-primary p-5 rounded-r-card mt-6">
-                  <p className="text-text-primary font-medium leading-relaxed">
-                    That&apos;s why I founded Matai Tech: to bring real-world
-                    data engineering expertise to businesses that need it most,
-                    creating custom automation solutions that actually solve
-                    operational problems.
-                  </p>
-                </div>
+                <p>
+                  If you&apos;d rather talk to the person who actually does the
+                  work — that&apos;s the whole pitch.
+                </p>
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

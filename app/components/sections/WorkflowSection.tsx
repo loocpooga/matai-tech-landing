@@ -1,82 +1,60 @@
 import WorkflowDiagram from "../ui/WorkflowDiagram";
+import Reveal from "../ui/Reveal";
 
 export default function WorkflowSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-bg-secondary">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="max-w-3xl mb-12">
-          <div className="font-mono text-xs text-slate-400 uppercase tracking-widest mb-4">
-            See It in Action
+    <section id="workflow" className="py-20 md:py-28 px-5 sm:px-8 bg-bg">
+      <div className="max-w-content mx-auto">
+        <Reveal>
+          <div className="flex items-center gap-3 mb-7">
+            <span className="w-8 h-px bg-ember" />
+            <span className="text-sm text-ember-deep font-medium">
+              Watch one run
+            </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-text-primary mb-4">
-            Real automation workflows
-          </h2>
-          <p className="text-lg text-slate-500 leading-relaxed">
-            Here&apos;s a real example: a fully automated lead-to-close pipeline.
-            Every step—from the first inquiry to deal closed—happens
-            automatically, with zero manual work.
-          </p>
-        </div>
 
-        {/* Workflow diagram */}
-        <div className="relative">
-          {/* Floating badge */}
-          <div className="absolute -top-4 right-6 z-10 bg-accent-warm text-white px-4 py-2 rounded-card shadow-soft-warm text-xs font-semibold tracking-wider uppercase">
-            Live Workflow
+          <div className="max-w-2xl mb-10">
+            <h2 className="text-3xl md:text-4xl text-ink mb-5 text-balance">
+              This is what &quot;automated&quot; actually looks like.
+            </h2>
+            <p className="text-ink-soft leading-relaxed">
+              A lead-to-close flow I built as a working demo — my own asset,
+              running on dummy data. A lead comes in, lands in the CRM, gets
+              assigned, gets a text, gets a follow-up. Nobody touched anything.
+            </p>
           </div>
+
           <WorkflowDiagram />
-        </div>
 
-        {/* Supporting callouts */}
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          {[
-            {
-              accent: "primary",
-              title: "Triggered Instantly",
-              description:
-                "The moment a lead fills out a form, calls, or is entered into your CRM—the workflow fires.",
-            },
-            {
-              accent: "warm",
-              title: "Conditional Logic",
-              description:
-                "Workflows branch based on real data—won deals, lost deals, no-shows—each gets the right response.",
-            },
-            {
-              accent: "bright",
-              title: "Fully Connected",
-              description:
-                "Your CRM, email, calendar, and accounting tools all stay in sync—no copy-pasting, ever.",
-            },
-          ].map((h) => (
-            <div
-              key={h.title}
-              className={`bg-bg-elevated rounded-card p-5 border-t-2 ${
-                h.accent === "primary"
-                  ? "border-primary"
-                  : h.accent === "warm"
-                    ? "border-accent-warm"
-                    : "border-accent-bright"
-              }`}
-            >
-              <div
-                className={`font-display font-semibold text-sm mb-2 ${
-                  h.accent === "primary"
-                    ? "text-primary"
-                    : h.accent === "warm"
-                      ? "text-accent-warm"
-                      : "text-accent-bright-dark"
-                }`}
-              >
-                {h.title}
+          <div className="grid md:grid-cols-3 gap-x-10 gap-y-6 mt-10">
+            {[
+              {
+                title: "Fires the moment a lead arrives",
+                description:
+                  "Form fill, phone call, or referral — the flow starts before anyone's seen the notification.",
+              },
+              {
+                title: "Branches on real conditions",
+                description:
+                  "Won, not ready, no-show — each path gets its own next step instead of falling into a pile.",
+              },
+              {
+                title: "Everything stays in sync",
+                description:
+                  "CRM, calendar, email, books. One entry, everywhere it needs to be. No copy-paste.",
+              },
+            ].map((h) => (
+              <div key={h.title} className="border-t border-bg-border pt-5">
+                <div className="text-sm text-ink font-medium mb-2">
+                  {h.title}
+                </div>
+                <div className="text-sm text-ink-muted leading-relaxed">
+                  {h.description}
+                </div>
               </div>
-              <div className="text-sm text-slate-500 leading-relaxed">
-                {h.description}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
