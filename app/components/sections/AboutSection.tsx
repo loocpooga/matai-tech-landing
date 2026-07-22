@@ -9,7 +9,7 @@ export default function AboutSection() {
           <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
             {/* Photo */}
             <div className="w-full md:w-2/5 flex-shrink-0">
-              <div className="relative aspect-[3/4] w-full max-w-sm mx-auto rounded-lg overflow-hidden border border-bg-border">
+              <div className="relative aspect-[3/4] w-full max-w-sm mx-auto rounded-lg overflow-hidden border border-rule">
                 <Image
                   src="/images/about-photo.jpg"
                   alt="Luke Pauga, founder of Matai Tech, with his wife"
@@ -21,14 +21,11 @@ export default function AboutSection() {
 
             {/* Text */}
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-7">
-                <span className="w-8 h-px bg-ember" />
-                <span className="text-sm text-ember-bright font-medium">
-                  About
-                </span>
-              </div>
+              <div className="rule-heavy pb-2 mb-8">
+            <span className="eyebrow">About</span>
+          </div>
 
-              <h2 className="text-3xl md:text-4xl text-cream mb-6 text-balance">
+              <h2 className="text-3xl md:text-4xl text-ink mb-6 text-balance">
                 Hi, I&apos;m Luke. Matai Tech is just me. That&apos;s the
                 point.
               </h2>

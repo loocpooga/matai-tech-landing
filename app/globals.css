@@ -3,28 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --bg: #151210;
-  --bg-border: #2E2822;
-  --cream: #F1EDE6;
-  --ink-soft: #B3AB9F;
-  --ink-muted: #8A8175;
-  --ember: #C05A2B;
-  --ember-bright: #E17A4C;
+  --page: #DFEAD8;
+  --white: #F8FBF6;
+  --ink: #14201A;
+  --deep: #0E4A33;
+  --alert: #96182D;
+  --muted: #5B6C60;
+  --rule: #B3C8AB;
+  --band: #E9F1E3;
+  --bar: #DEE9D7;
 }
 
 body {
-  color: var(--cream);
-  background: var(--bg);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+  background: var(--page);
+  font-family: var(--font-plex-sans), -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3 {
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-weight: 560;
-  letter-spacing: -0.015em;
-  line-height: 1.12;
+  font-family: var(--font-zilla), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 html {
@@ -43,12 +45,18 @@ html {
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
 
-  /* Faint blueprint grid for hero / feature panels */
-  .blueprint-grid {
-    background-image:
-      linear-gradient(rgba(241, 237, 230, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(241, 237, 230, 0.03) 1px, transparent 1px);
-    background-size: 48px 48px;
+  /* Eyebrow: mono caps over a heavy ink rule */
+  .eyebrow {
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .rule-heavy {
+    border-bottom: 1.5px solid var(--ink);
   }
 }
 
@@ -63,7 +71,7 @@ html {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--cream);
+  background: var(--ink);
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-link:hover::after {
@@ -72,15 +80,15 @@ html {
 
 /* Focus states */
 *:focus-visible {
-  outline: 2px solid var(--ember-bright);
-  outline-offset: 3px;
+  outline: 2px solid var(--deep);
+  outline-offset: 1px;
   border-radius: 2px;
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(192, 90, 43, 0.35);
-  color: var(--cream);
+  background: rgba(14, 74, 51, 0.18);
+  color: var(--ink);
 }
 
 a, button {
@@ -105,12 +113,12 @@ a, button {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: var(--page);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-border);
+  background: var(--rule);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ink-muted);
+  background: var(--muted);
 }

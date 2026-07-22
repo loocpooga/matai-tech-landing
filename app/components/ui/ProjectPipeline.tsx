@@ -60,39 +60,39 @@ const columns = [
 
 export default function ProjectPipeline() {
   return (
-    <div className="bg-bg-raised rounded-lg overflow-hidden border border-bg-border select-none">
+    <div className="bg-paper rounded-lg overflow-hidden border border-rule select-none">
       {/* App header */}
-      <div className="bg-bg border-b border-bg-border px-5 py-3 flex items-center justify-between">
+      <div className="bg-band border-b border-rule px-5 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full bg-bg-border" />
-            <div className="w-2.5 h-2.5 rounded-full bg-bg-border" />
-            <div className="w-2.5 h-2.5 rounded-full bg-bg-border" />
+            <div className="w-2.5 h-2.5 rounded-full bg-rule" />
+            <div className="w-2.5 h-2.5 rounded-full bg-rule" />
+            <div className="w-2.5 h-2.5 rounded-full bg-rule" />
           </div>
           <span className="font-mono text-xs text-ink-muted ml-2">
             project-pipeline.app
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-16 h-5 bg-bg-border/50 rounded" />
-          <div className="w-20 h-5 bg-ember/15 rounded" />
+          <div className="w-16 h-5 bg-rule/50 rounded" />
+          <div className="w-20 h-5 bg-deep/15 rounded" />
         </div>
       </div>
 
       {/* Dashboard header */}
-      <div className="px-5 pt-4 pb-3 border-b border-bg-border">
+      <div className="px-5 pt-4 pb-3 border-b border-rule">
         <div className="flex items-center justify-between mb-3">
           <div>
-            <h4 className="text-sm text-cream font-medium">Project pipeline</h4>
+            <h4 className="text-sm text-ink font-medium">Project pipeline</h4>
             <p className="text-xs text-ink-muted mt-0.5">
               Every job from deposit to final invoice
             </p>
           </div>
           <div className="hidden sm:flex items-center gap-2">
-            <div className="px-3 py-1 border border-bg-border rounded text-xs text-ink-muted bg-bg">
+            <div className="px-3 py-1 border border-rule rounded text-xs text-ink-muted bg-paper">
               View archived
             </div>
-            <div className="px-3 py-1 bg-ember text-white rounded text-xs font-medium">
+            <div className="px-3 py-1 bg-deep text-white rounded text-xs font-medium">
               + New project
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function ProjectPipeline() {
         {/* Legend */}
         <div className="flex items-center gap-4 text-[10px] text-ink-muted flex-wrap">
           <span className="flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-ember inline-block" />
+            <span className="w-1.5 h-1.5 rounded-full bg-alert inline-block" />
             Stalled (14+ days)
           </span>
           <span className="flex items-center gap-1">
@@ -118,11 +118,11 @@ export default function ProjectPipeline() {
           {columns.map((col) => (
             <div key={col.label} className="min-w-0">
               {/* Column header */}
-              <div className="flex items-center justify-between px-3 py-2 mb-2 border-t-2 border-ink/20 bg-bg rounded-b">
-                <span className="text-[10px] font-medium text-ink-soft truncate">
+              <div className="flex items-center justify-between px-3 py-2 mb-2 border-t-2 border-rule bg-band rounded-b">
+                <span className="font-mono text-[9px] tracking-[0.08em] uppercase font-medium text-ink-soft truncate">
                   {col.label}
                 </span>
-                <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-ink/10 text-ink-soft flex-shrink-0">
+                <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-band text-ink-soft flex-shrink-0">
                   {col.count}
                 </span>
               </div>
@@ -130,7 +130,7 @@ export default function ProjectPipeline() {
               {/* Cards */}
               <div className="space-y-2">
                 {col.cards.length === 0 ? (
-                  <div className="flex flex-col items-center justify-center py-6 text-bg-border">
+                  <div className="flex flex-col items-center justify-center py-6 text-rule">
                     <svg
                       className="w-6 h-6 mb-1"
                       fill="none"
@@ -152,18 +152,18 @@ export default function ProjectPipeline() {
                   col.cards.map((card) => (
                     <div
                       key={card.name}
-                      className="bg-bg rounded p-2.5 border border-bg-border"
+                      className="bg-bg rounded p-2.5 border border-rule/70"
                     >
                       <div className="flex items-start justify-between mb-1.5">
-                        <span className="text-[11px] font-medium text-cream leading-tight">
+                        <span className="text-[11px] font-medium text-ink leading-tight">
                           {card.name}
                         </span>
                         {card.daysOpen >= 14 ? (
-                          <span className="text-[9px] bg-ember/10 text-ember-bright px-1.5 py-0.5 rounded font-medium flex-shrink-0 ml-1">
+                          <span className="text-[9px] bg-alert/10 text-alert px-1.5 py-0.5 rounded font-medium flex-shrink-0 ml-1">
                             {card.daysOpen}d
                           </span>
                         ) : (
-                          <span className="text-[9px] bg-bg-border/40 text-ink-muted px-1.5 py-0.5 rounded font-medium flex-shrink-0 ml-1">
+                          <span className="text-[9px] bg-rule/40 text-ink-muted px-1.5 py-0.5 rounded font-medium flex-shrink-0 ml-1">
                             {card.daysOpen}d
                           </span>
                         )}
@@ -172,7 +172,7 @@ export default function ProjectPipeline() {
                         {card.type}
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-[11px] font-semibold text-cream">
+                        <span className="font-mono text-[11px] font-semibold text-ink">
                           {card.amount}
                         </span>
                         <span className="text-[9px] text-ink-muted">

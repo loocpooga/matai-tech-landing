@@ -6,15 +6,12 @@ export default function WorkflowSection() {
     <section id="workflow" className="py-20 md:py-28 px-5 sm:px-8 bg-bg">
       <div className="max-w-content mx-auto">
         <Reveal>
-          <div className="flex items-center gap-3 mb-7">
-            <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-ember-bright font-medium">
-              Watch one run
-            </span>
+          <div className="rule-heavy pb-2 mb-8">
+            <span className="eyebrow">Watch one run</span>
           </div>
 
           <div className="max-w-2xl mb-10">
-            <h2 className="text-3xl md:text-4xl text-cream mb-5 text-balance">
+            <h2 className="text-3xl md:text-4xl text-ink mb-5 text-balance">
               This is what &quot;automated&quot; actually looks like.
             </h2>
             <p className="text-ink-soft leading-relaxed">
@@ -44,8 +41,8 @@ export default function WorkflowSection() {
                   "CRM, calendar, email, books. One entry, everywhere it needs to be. No copy-paste.",
               },
             ].map((h) => (
-              <div key={h.title} className="border-t border-bg-border pt-5">
-                <div className="text-sm text-cream font-medium mb-2">
+              <div key={h.title} className="border-t border-rule pt-5">
+                <div className="text-sm text-ink font-medium mb-2">
                   {h.title}
                 </div>
                 <div className="text-sm text-ink-muted leading-relaxed">

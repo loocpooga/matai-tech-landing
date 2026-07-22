@@ -1,17 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Zilla_Slab, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import MataiChatWidget from "./components/MataiChatWidget";
 
-const fraunces = Fraunces({
+const zilla = Zilla_Slab({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  weight: ["600", "700"],
+  variable: "--font-zilla",
   display: "swap",
 });
 
-const inter = Inter({
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-sans",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-mono",
   display: "swap",
 });
 
@@ -31,7 +40,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#151210",
+  themeColor: "#DFEAD8",
 };
 
 export default function RootLayout({
@@ -40,7 +49,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${zilla.variable} ${plexSans.variable} ${plexMono.variable}`}
+    >
       <body>
         {children}
         <MataiChatWidget />

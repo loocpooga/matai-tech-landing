@@ -21,17 +21,14 @@ const pains = [
 
 export default function ProblemSection() {
   return (
-    <section className="py-20 md:py-28 px-5 sm:px-8 bg-ink">
+    <section className="py-20 md:py-28 px-5 sm:px-8 bg-paper border-y border-rule">
       <div className="max-w-content mx-auto">
         <Reveal>
-          <div className="flex items-center gap-3 mb-7">
-            <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-ember-bright font-medium">
-              Sound familiar?
-            </span>
+          <div className="rule-heavy pb-2 mb-8">
+            <span className="eyebrow">Sound familiar?</span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl text-on-dark mb-14 max-w-2xl text-balance">
+          <h2 className="text-3xl md:text-4xl text-ink mb-14 max-w-2xl text-balance">
             The work is good. The systems around it are leaking.
           </h2>
 
@@ -39,13 +36,13 @@ export default function ProblemSection() {
             {pains.map((pain, i) => (
               <div
                 key={pain.title}
-                className="border-t border-on-dark-border pt-6"
+                className="border-t border-rule pt-6"
               >
-                <div className="text-xs text-on-dark-soft mb-3">
+                <div className="font-mono text-[10px] tracking-[0.1em] text-deep mb-3">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="text-xl text-on-dark mb-3">{pain.title}</h3>
-                <p className="text-on-dark-soft text-sm leading-relaxed">
+                <h3 className="text-xl text-ink mb-3">{pain.title}</h3>
+                <p className="text-ink-soft text-sm leading-relaxed">
                   {pain.body}
                 </p>
               </div>

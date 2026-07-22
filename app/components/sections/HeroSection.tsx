@@ -4,27 +4,15 @@ const verticals = ["Roofing", "Solar", "HVAC", "Windows", "Pools"];
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 px-5 sm:px-8 bg-bg overflow-hidden">
-      {/* Ambient: faint blueprint grid + warm ember glow */}
-      <div className="absolute inset-0 blueprint-grid pointer-events-none" />
-      <div
-        className="absolute -top-40 -left-40 w-[720px] h-[720px] rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(192,90,43,0.14) 0%, transparent 65%)",
-        }}
-      />
-      <div className="max-w-content mx-auto relative">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-24 px-5 sm:px-8 bg-bg">
+      <div className="max-w-content mx-auto">
         <div className="max-w-3xl">
           {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-7 animate-fade-up">
-            <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-ember-bright font-medium">
-              Automation for trades businesses
-            </span>
+          <div className="rule-heavy pb-2 mb-8 animate-fade-up">
+            <span className="eyebrow">Automation for trades businesses</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl text-cream mb-7 text-balance animate-fade-up delay-100">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl text-ink mb-7 text-balance animate-fade-up delay-100">
             Your team is doing work your software should be doing.
           </h1>
 
@@ -49,17 +37,9 @@ export default function HeroSection() {
             </Button>
           </div>
 
-          {/* Verticals served */}
-          <div className="flex items-center gap-x-4 gap-y-2 flex-wrap animate-fade-up delay-400">
-            <span className="text-xs text-ink-muted">Built for</span>
-            {verticals.map((v, i) => (
-              <span key={v} className="flex items-center gap-4">
-                <span className="text-sm text-ink-soft">{v}</span>
-                {i < verticals.length - 1 && (
-                  <span className="w-1 h-1 rounded-full bg-bg-border" />
-                )}
-              </span>
-            ))}
+          {/* Verticals served: mono micro row */}
+          <div className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-soft animate-fade-up delay-400">
+            {verticals.join(" · ")}
           </div>
         </div>
       </div>

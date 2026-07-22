@@ -8,15 +8,15 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-on-dark py-16 px-5 sm:px-8">
+    <footer className="bg-bg border-t-[1.5px] border-ink py-14 px-5 sm:px-8">
       <div className="max-w-content mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-2xl font-display font-semibold text-on-dark mb-3">
-              Matai Tech<span className="text-ember">.</span>
+            <div className="font-display font-bold text-[21px] tracking-[-0.02em] text-ink mb-3">
+              Matai Tech<span className="text-deep">.</span>
             </div>
-            <p className="text-on-dark-soft text-sm leading-relaxed max-w-sm">
+            <p className="text-ink-soft text-sm leading-relaxed max-w-sm">
               Systems and automation for trades businesses. One person, doing
               the work directly, connecting the tools you already run so leads
               stop slipping.
@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-medium text-on-dark mb-4">
+            <h4 className="font-mono text-[10px] tracking-[0.13em] uppercase font-semibold text-ink mb-4">
               On this page
             </h4>
             <ul className="space-y-3">
@@ -33,7 +33,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-on-dark-soft hover:text-on-dark text-sm transition-colors duration-200"
+                    className="text-ink-soft hover:text-deep text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -44,12 +44,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-medium text-on-dark mb-4">Reach me</h4>
+            <h4 className="font-mono text-[10px] tracking-[0.13em] uppercase font-semibold text-ink mb-4">
+              Reach me
+            </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:luke@mataitech.co"
-                  className="text-on-dark-soft hover:text-on-dark text-sm transition-colors duration-200"
+                  className="text-ink-soft hover:text-deep text-sm transition-colors duration-200"
                 >
                   luke@mataitech.co
                 </a>
@@ -59,7 +61,7 @@ export default function Footer() {
                   href="https://cal.com/luke-pauga-hlurq5/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-on-dark-soft hover:text-on-dark text-sm transition-colors duration-200"
+                  className="text-ink-soft hover:text-deep text-sm transition-colors duration-200"
                 >
                   Book a 30-min call
                 </a>
@@ -69,13 +71,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-on-dark-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-on-dark-soft">
-            &copy; {new Date().getFullYear()} Matai Tech LLC. All rights
-            reserved.
+        <div className="border-t border-rule pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="font-mono text-[10px] tracking-[0.09em] uppercase text-ink-soft">
+            &copy; {new Date().getFullYear()} Matai Tech LLC
           </p>
-          <p className="text-xs text-on-dark-soft">
-            Built and run by one person, on purpose.
+          <p className="font-mono text-[10px] tracking-[0.09em] uppercase text-ink-soft">
+            Built and run by one person, on purpose
           </p>
         </div>
       </div>

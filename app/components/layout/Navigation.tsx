@@ -23,28 +23,26 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
-        scrolled
-          ? "bg-bg/95 backdrop-blur-md border-bg-border"
-          : "bg-bg/80 backdrop-blur-sm border-transparent"
+      className={`fixed top-0 w-full z-50 transition-colors duration-300 rule-heavy ${
+        scrolled ? "bg-bg/95 backdrop-blur-md" : "bg-bg"
       }`}
     >
-      <div className="max-w-content mx-auto px-5 sm:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <a href="#" className="flex items-center">
-            <span className="text-xl font-display font-semibold text-cream tracking-tight">
-              Matai Tech<span className="text-ember">.</span>
+      <div className="max-w-content mx-auto px-[18px]">
+        <div className="flex justify-between items-center pt-4 pb-2.5">
+          {/* Wordmark */}
+          <a href="#" className="flex items-baseline">
+            <span className="font-display font-bold text-[21px] leading-none tracking-[-0.02em] text-ink">
+              Matai Tech<span className="text-deep">.</span>
             </span>
           </a>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center space-x-7">
+          {/* Desktop links: tab style */}
+          <div className="hidden md:flex items-baseline gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="nav-link text-ink-soft hover:text-cream text-sm transition-colors duration-200"
+                className="nav-link font-mono text-[10px] tracking-[0.09em] uppercase text-ink-soft hover:text-ink transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -66,7 +64,7 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-ink-soft hover:text-cream transition-colors"
+            className="md:hidden p-2 text-ink-soft hover:text-ink transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
@@ -99,13 +97,13 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-bg border-t border-bg-border">
-          <div className="px-5 py-4 space-y-3">
+        <div className="md:hidden bg-bg border-t border-rule">
+          <div className="px-[18px] py-4 space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block text-ink-soft hover:text-cream text-sm py-2 transition-colors"
+                className="block font-mono text-[11px] tracking-[0.09em] uppercase text-ink-soft hover:text-ink py-2 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}

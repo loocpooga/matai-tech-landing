@@ -9,36 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Ironworks night-shift palette
-        bg: "#151210", // warm near-black page background
-        "bg-raised": "#1D1915", // cards / raised flat surfaces
-        "bg-border": "#2E2822", // hairline borders
-        ink: "#0D0B09", // deepest black, contrast sections
-        "ink-deep": "#1A1613", // panels inside deep sections
-        "ink-soft": "#B3AB9F", // secondary text
-        "ink-muted": "#8A8175", // captions, metadata
-        cream: "#F1EDE6", // primary text
-        ember: "#C05A2B", // single accent: buttons, key highlights
-        "ember-deep": "#A34A22", // hover states
-        "ember-bright": "#E17A4C", // ember text + glows on dark
-        "on-dark": "#F1EDE6", // text on deep sections
-        "on-dark-soft": "#B3AB9F", // secondary text on deep sections
-        "on-dark-border": "#2E2822", // hairlines on deep sections
+        // Ledger colorway: sage ground, ink type, one green accent
+        bg: "#DFEAD8", // page: the ground, every screen sits on this
+        paper: "#F8FBF6", // cards, tables, inputs
+        band: "#E9F1E3", // faint fills, inner dividers
+        bar: "#DEE9D7", // zebra striping
+        ink: "#14201A", // all type: a green-black, never pure black
+        "ink-soft": "#5B6C60", // secondary type: sage-biased grey
+        "ink-muted": "#5B6C60", // alias, same job as ink-soft
+        rule: "#B3C8AB", // every 1px border and hairline
+        deep: "#0E4A33", // the accent: links, wins, bar fills
+        "deep-dark": "#0A3A28", // hover state for deep
+        alert: "#96182D", // earned, never ambient
       },
 
       fontFamily: {
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        display: ["var(--font-zilla)", "Georgia", "serif"],
+        sans: ["var(--font-plex-sans)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        mono: ["var(--font-plex-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
+
+      // The chassis: 2px is the largest curve anywhere
+      borderRadius: {
+        none: "0",
+        sm: "2px",
+        DEFAULT: "2px",
+        md: "2px",
+        lg: "2px",
+        xl: "2px",
+        "2xl": "2px",
+        full: "9999px", // status dots only, never pills
       },
 
       maxWidth: {
-        content: "1100px",
-      },
-
-      boxShadow: {
-        "glow-ember": "0 0 28px rgba(192, 90, 43, 0.35)",
-        "glow-ember-lg": "0 0 40px rgba(192, 90, 43, 0.5)",
+        content: "1060px",
       },
 
       keyframes: {

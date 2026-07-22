@@ -6,19 +6,16 @@ export default function CaseStudySection() {
     <section id="proof" className="py-20 md:py-28 px-5 sm:px-8 bg-bg">
       <div className="max-w-content mx-auto">
         <Reveal>
-          <div className="flex items-center gap-3 mb-7">
-            <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-ember-bright font-medium">
-              Client work
-            </span>
+          <div className="rule-heavy pb-2 mb-8">
+            <span className="eyebrow">Client work</span>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="text-xs text-ink-muted mb-3">
+              <div className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-soft mb-3">
                 Marquis Pools · pool construction
               </div>
-              <h2 className="text-3xl md:text-4xl text-cream mb-6 text-balance">
+              <h2 className="text-3xl md:text-4xl text-ink mb-6 text-balance">
                 A pool builder&apos;s pipeline, out of the spreadsheet.
               </h2>
               <div className="space-y-4 text-ink-soft leading-relaxed">
@@ -35,8 +32,8 @@ export default function CaseStudySection() {
                 </p>
               </div>
 
-              <div className="mt-8 border-t border-bg-border pt-6 flex items-baseline gap-3">
-                <span className="font-display text-4xl text-ember-bright">
+              <div className="mt-8 border-t border-rule pt-6 flex items-baseline gap-3">
+                <span className="font-display text-4xl text-deep">
                   10+ hours
                 </span>
                 <span className="text-ink-soft text-sm">
@@ -48,7 +45,7 @@ export default function CaseStudySection() {
             {/* Project pipeline mockup */}
             <div>
               <ProjectPipeline />
-              <p className="text-xs text-ink-muted mt-3 text-center">
+              <p className="font-mono text-[9px] tracking-[0.08em] uppercase text-ink-soft mt-3 text-center">
                 The actual tracker, with example data
               </p>
             </div>

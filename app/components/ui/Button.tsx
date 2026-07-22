@@ -20,14 +20,12 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:ring-offset-bg";
+    "inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-deep focus-visible:ring-offset-2 focus-visible:ring-offset-bg";
 
   const variants = {
-    primary:
-      "bg-ember text-white hover:bg-ember-deep shadow-glow-ember hover:shadow-glow-ember-lg transition-shadow",
-    secondary: "bg-cream text-ink hover:bg-white",
-    ghost:
-      "bg-transparent border border-bg-border text-cream hover:border-ink-muted",
+    primary: "bg-deep text-white hover:bg-deep-dark",
+    secondary: "bg-ink text-paper hover:bg-black",
+    ghost: "bg-transparent border border-ink text-ink hover:bg-band",
   };
 
   const sizes = {

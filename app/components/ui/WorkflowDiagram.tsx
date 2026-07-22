@@ -44,22 +44,20 @@ export default function WorkflowDiagram() {
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className="bg-ink rounded-lg p-6 md:p-8 overflow-x-auto"
+      className="bg-paper rounded border border-rule p-6 md:p-8 overflow-x-auto"
     >
       {/* Header */}
-      <div className="flex items-center justify-between mb-8 min-w-max md:min-w-0 gap-6">
+      <div className="flex items-center justify-between mb-8 min-w-max md:min-w-0 gap-6 rule-heavy pb-2">
         <div className="flex items-center gap-3">
           <span
             className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-              isInView ? "bg-ember animate-pulse" : "bg-on-dark-border"
+              isInView ? "bg-deep animate-pulse" : "bg-rule"
             }`}
           />
-          <span className="text-xs text-on-dark-soft">
-            Lead-to-close workflow. Demo run, dummy data
-          </span>
+          <span className="eyebrow">Lead-to-close workflow</span>
         </div>
-        <span className="font-mono text-[10px] text-on-dark-soft/70">
-          runs 24/7 · 0 manual steps
+        <span className="font-mono text-[10px] tracking-[0.09em] uppercase text-ink-soft">
+          Demo run · dummy data · 24/7
         </span>
       </div>
 
@@ -72,50 +70,37 @@ export default function WorkflowDiagram() {
             <div key={step.id} className="flex items-center">
               {/* Node */}
               <div
-                className={`flex flex-col rounded-md px-3.5 py-3 border min-w-[118px] transition-all duration-500 ${
+                className={`flex flex-col rounded px-3.5 py-3 border min-w-[122px] transition-all duration-500 ${
                   isActive
-                    ? "border-ember bg-ember/10"
+                    ? "border-deep bg-deep"
                     : isDone
-                      ? "border-on-dark-border bg-ink-deep"
-                      : "border-on-dark-border/60 bg-transparent"
+                      ? "border-rule bg-band"
+                      : "border-rule bg-transparent"
                 }`}
               >
-                <div className="flex items-center gap-2 mb-1">
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${
-                      isActive
-                        ? "bg-ember"
-                        : isDone
-                          ? "bg-on-dark-soft"
-                          : "bg-on-dark-border"
-                    }`}
-                  />
-                  <span
-                    className={`text-[11px] font-medium leading-tight transition-colors duration-500 ${
-                      isActive
-                        ? "text-on-dark"
-                        : isDone
-                          ? "text-on-dark"
-                          : "text-on-dark-soft"
-                    }`}
-                  >
-                    {step.label}
-                  </span>
-                </div>
-                <span className="text-[9px] text-on-dark-soft leading-tight pl-3.5">
+                <span
+                  className={`text-[11px] font-medium leading-tight transition-colors duration-500 ${
+                    isActive ? "text-paper" : isDone ? "text-ink" : "text-ink-soft"
+                  }`}
+                >
+                  {step.label}
+                </span>
+                <span
+                  className={`font-mono text-[9px] leading-tight mt-1 transition-colors duration-500 ${
+                    isActive ? "text-paper/70" : "text-ink-soft"
+                  }`}
+                >
                   {step.sublabel}
                 </span>
               </div>
 
               {/* Connector */}
-              {i < steps.length && (
-                <div className="w-7 h-px relative flex-shrink-0 bg-on-dark-border">
-                  <div
-                    className="absolute inset-y-0 left-0 bg-ember transition-all duration-700"
-                    style={{ width: activeStep > i ? "100%" : "0%" }}
-                  />
-                </div>
-              )}
+              <div className="w-7 h-px relative flex-shrink-0 bg-rule">
+                <div
+                  className="absolute inset-y-0 left-0 bg-deep transition-all duration-700"
+                  style={{ width: activeStep > i ? "100%" : "0%" }}
+                />
+              </div>
             </div>
           );
         })}
@@ -129,26 +114,34 @@ export default function WorkflowDiagram() {
               <div key={out.id} className="flex items-center">
                 <div
                   className={`w-4 h-px flex-shrink-0 transition-colors duration-700 ${
-                    litUp ? "bg-ember" : "bg-on-dark-border"
+                    litUp ? "bg-deep" : "bg-rule"
                   } ${i === 0 ? "-rotate-12" : "rotate-12"}`}
                 />
                 <div
-                  className={`flex flex-col rounded-md px-3.5 py-2.5 border min-w-[150px] transition-all duration-500 ${
+                  className={`flex flex-col rounded px-3.5 py-2.5 border min-w-[160px] transition-all duration-500 ${
                     litUp && isWon
-                      ? "border-ember bg-ember/10"
+                      ? "border-deep bg-deep"
                       : litUp
-                        ? "border-on-dark-border bg-ink-deep"
-                        : "border-on-dark-border/60"
+                        ? "border-rule bg-band"
+                        : "border-rule"
                   }`}
                 >
                   <span
                     className={`text-[11px] font-medium transition-colors duration-500 ${
-                      litUp ? "text-on-dark" : "text-on-dark-soft"
+                      litUp && isWon
+                        ? "text-paper"
+                        : litUp
+                          ? "text-ink"
+                          : "text-ink-soft"
                     }`}
                   >
                     {out.label}
                   </span>
-                  <span className="text-[9px] text-on-dark-soft leading-tight">
+                  <span
+                    className={`font-mono text-[9px] leading-tight mt-0.5 ${
+                      litUp && isWon ? "text-paper/70" : "text-ink-soft"
+                    }`}
+                  >
                     {out.detail}
                   </span>
                 </div>
@@ -159,17 +152,17 @@ export default function WorkflowDiagram() {
       </div>
 
       {/* Stats bar */}
-      <div className="pt-5 border-t border-on-dark-border flex items-center gap-x-6 gap-y-2 flex-wrap min-w-max md:min-w-0">
+      <div className="pt-5 border-t border-rule flex items-center gap-x-6 gap-y-2 flex-wrap min-w-max md:min-w-0">
         {[
           { label: "First response", value: "< 30 sec" },
           { label: "Steps automated", value: "7" },
           { label: "Typing required", value: "none" },
         ].map((stat) => (
           <div key={stat.label} className="flex items-center gap-2">
-            <span className="font-mono text-[11px] text-on-dark-soft">
+            <span className="font-mono text-[10px] tracking-[0.09em] uppercase text-ink-soft">
               {stat.label}:
             </span>
-            <span className="font-mono text-[11px] text-ember font-semibold">
+            <span className="font-mono text-[11px] text-deep font-semibold">
               {stat.value}
             </span>
           </div>
