@@ -33,7 +33,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <span className="text-xl font-display font-semibold text-ink tracking-tight">
+            <span className="text-xl font-display font-semibold text-cream tracking-tight">
               Matai Tech<span className="text-ember">.</span>
             </span>
           </a>
@@ -44,7 +44,7 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="nav-link text-ink-soft hover:text-ink text-sm transition-colors duration-200"
+                className="nav-link text-ink-soft hover:text-cream text-sm transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -66,7 +66,7 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-ink-soft hover:text-ink transition-colors"
+            className="md:hidden p-2 text-ink-soft hover:text-cream transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
@@ -105,7 +105,7 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="block text-ink-soft hover:text-ink text-sm py-2 transition-colors"
+                className="block text-ink-soft hover:text-cream text-sm py-2 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}

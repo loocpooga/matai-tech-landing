@@ -4,18 +4,27 @@ const verticals = ["Roofing", "Solar", "HVAC", "Windows", "Pools"];
 
 export default function HeroSection() {
   return (
-    <section className="pt-36 pb-20 md:pt-44 md:pb-28 px-5 sm:px-8 bg-bg">
-      <div className="max-w-content mx-auto">
+    <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 px-5 sm:px-8 bg-bg overflow-hidden">
+      {/* Ambient: faint blueprint grid + warm ember glow */}
+      <div className="absolute inset-0 blueprint-grid pointer-events-none" />
+      <div
+        className="absolute -top-40 -left-40 w-[720px] h-[720px] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(192,90,43,0.14) 0%, transparent 65%)",
+        }}
+      />
+      <div className="max-w-content mx-auto relative">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-7 animate-fade-up">
             <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-ember-deep font-medium">
+            <span className="text-sm text-ember-bright font-medium">
               Automation for trades businesses
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl text-ink mb-7 text-balance animate-fade-up delay-100">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl text-cream mb-7 text-balance animate-fade-up delay-100">
             Your team is doing work your software should be doing.
           </h1>
 

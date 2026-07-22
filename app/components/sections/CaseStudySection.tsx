@@ -8,7 +8,7 @@ export default function CaseStudySection() {
         <Reveal>
           <div className="flex items-center gap-3 mb-7">
             <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-ember-deep font-medium">
+            <span className="text-sm text-ember-bright font-medium">
               Client work
             </span>
           </div>
@@ -18,7 +18,7 @@ export default function CaseStudySection() {
               <div className="text-xs text-ink-muted mb-3">
                 Marquis Pools · pool construction
               </div>
-              <h2 className="text-3xl md:text-4xl text-ink mb-6 text-balance">
+              <h2 className="text-3xl md:text-4xl text-cream mb-6 text-balance">
                 A pool builder&apos;s pipeline, out of the spreadsheet.
               </h2>
               <div className="space-y-4 text-ink-soft leading-relaxed">
@@ -36,7 +36,7 @@ export default function CaseStudySection() {
               </div>
 
               <div className="mt-8 border-t border-bg-border pt-6 flex items-baseline gap-3">
-                <span className="font-display text-4xl text-ember-deep">
+                <span className="font-display text-4xl text-ember-bright">
                   10+ hours
                 </span>
                 <span className="text-ink-soft text-sm">

@@ -23,12 +23,12 @@ export default function AboutSection() {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-7">
                 <span className="w-8 h-px bg-ember" />
-                <span className="text-sm text-ember-deep font-medium">
+                <span className="text-sm text-ember-bright font-medium">
                   About
                 </span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl text-ink mb-6 text-balance">
+              <h2 className="text-3xl md:text-4xl text-cream mb-6 text-balance">
                 Hi, I&apos;m Luke. Matai Tech is just me. That&apos;s the
                 point.
               </h2>

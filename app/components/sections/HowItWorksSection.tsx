@@ -26,22 +26,22 @@ export default function HowItWorksSection() {
         <Reveal>
           <div className="flex items-center gap-3 mb-7">
             <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-ember-deep font-medium">
+            <span className="text-sm text-ember-bright font-medium">
               How it works
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl text-ink mb-14 max-w-2xl text-balance">
+          <h2 className="text-3xl md:text-4xl text-cream mb-14 max-w-2xl text-balance">
             No discovery phases. No retainers you forgot you&apos;re paying.
           </h2>
 
           <div className="grid md:grid-cols-3 gap-x-10 gap-y-10">
             {steps.map((step) => (
               <div key={step.number} className="border-t border-bg-border pt-6">
-                <div className="font-display text-3xl text-ember-deep mb-4">
+                <div className="font-display text-3xl text-ember-bright mb-4">
                   {step.number}
                 </div>
-                <h3 className="text-xl text-ink mb-3">{step.title}</h3>
+                <h3 className="text-xl text-cream mb-3">{step.title}</h3>
                 <p className="text-ink-soft text-sm leading-relaxed">
                   {step.body}
                 </p>

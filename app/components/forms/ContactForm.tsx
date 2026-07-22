@@ -65,7 +65,7 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    "w-full px-4 py-3 bg-bg border border-bg-border text-ink rounded-md focus:border-ember focus:ring-1 focus:ring-ember/30 outline-none transition-all duration-200 placeholder:text-ink-muted text-sm";
+    "w-full px-4 py-3 bg-bg border border-bg-border text-cream rounded-md focus:border-ember focus:ring-1 focus:ring-ember/30 outline-none transition-all duration-200 placeholder:text-ink-muted text-sm";
 
   const labelClass = "block text-sm font-medium text-ink-soft mb-2";
 
@@ -74,7 +74,7 @@ export default function ContactForm() {
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className={labelClass}>
-            Name <span className="text-ember-deep">*</span>
+            Name <span className="text-ember-bright">*</span>
           </label>
           <input
             type="text"
@@ -89,7 +89,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" className={labelClass}>
-            Email <span className="text-ember-deep">*</span>
+            Email <span className="text-ember-bright">*</span>
           </label>
           <input
             type="email"
@@ -121,7 +121,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className={labelClass}>
-          What&apos;s eating your week? <span className="text-ember-deep">*</span>
+          What&apos;s eating your week? <span className="text-ember-bright">*</span>
         </label>
         <textarea
           id="message"
@@ -146,7 +146,7 @@ export default function ContactForm() {
       </Button>
 
       {formStatus === "success" && (
-        <div className="bg-ember/10 border border-ember/30 text-ember-deep px-4 py-3 rounded-md text-sm font-medium">
+        <div className="bg-ember/10 border border-ember/30 text-ember-bright px-4 py-3 rounded-md text-sm font-medium">
           Got it. I read every message and I&apos;ll get back to you within a
           day.
         </div>

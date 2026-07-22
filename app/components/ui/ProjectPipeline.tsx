@@ -83,7 +83,7 @@ export default function ProjectPipeline() {
       <div className="px-5 pt-4 pb-3 border-b border-bg-border">
         <div className="flex items-center justify-between mb-3">
           <div>
-            <h4 className="text-sm text-ink font-medium">Project pipeline</h4>
+            <h4 className="text-sm text-cream font-medium">Project pipeline</h4>
             <p className="text-xs text-ink-muted mt-0.5">
               Every job from deposit to final invoice
             </p>
@@ -155,11 +155,11 @@ export default function ProjectPipeline() {
                       className="bg-bg rounded p-2.5 border border-bg-border"
                     >
                       <div className="flex items-start justify-between mb-1.5">
-                        <span className="text-[11px] font-medium text-ink leading-tight">
+                        <span className="text-[11px] font-medium text-cream leading-tight">
                           {card.name}
                         </span>
                         {card.daysOpen >= 14 ? (
-                          <span className="text-[9px] bg-ember/10 text-ember-deep px-1.5 py-0.5 rounded font-medium flex-shrink-0 ml-1">
+                          <span className="text-[9px] bg-ember/10 text-ember-bright px-1.5 py-0.5 rounded font-medium flex-shrink-0 ml-1">
                             {card.daysOpen}d
                           </span>
                         ) : (
@@ -172,7 +172,7 @@ export default function ProjectPipeline() {
                         {card.type}
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-[11px] font-semibold text-ink">
+                        <span className="font-mono text-[11px] font-semibold text-cream">
                           {card.amount}
                         </span>
                         <span className="text-[9px] text-ink-muted">

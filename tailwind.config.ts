@@ -9,19 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Ironworks palette
-        bg: "#F4F1EC", // warm off-white page background
-        "bg-raised": "#FBF9F5", // cards / raised flat surfaces on light
-        "bg-border": "#DED8CE", // hairline borders on light
-        ink: "#232323", // primary text + dark section backgrounds
-        "ink-deep": "#1B1B1B", // panels sitting on graphite sections
-        "ink-soft": "#5A5651", // secondary text
-        "ink-muted": "#7A756E", // captions, metadata
+        // Ironworks night-shift palette
+        bg: "#151210", // warm near-black page background
+        "bg-raised": "#1D1915", // cards / raised flat surfaces
+        "bg-border": "#2E2822", // hairline borders
+        ink: "#0D0B09", // deepest black, contrast sections
+        "ink-deep": "#1A1613", // panels inside deep sections
+        "ink-soft": "#B3AB9F", // secondary text
+        "ink-muted": "#8A8175", // captions, metadata
+        cream: "#F1EDE6", // primary text
         ember: "#C05A2B", // single accent: buttons, key highlights
-        "ember-deep": "#A34A22", // ember text on light bg + hover states
-        "on-dark": "#F1EDE6", // text on graphite sections
-        "on-dark-soft": "#A9A39A", // secondary text on graphite
-        "on-dark-border": "#3A3835", // hairline borders on graphite
+        "ember-deep": "#A34A22", // hover states
+        "ember-bright": "#E17A4C", // ember text + glows on dark
+        "on-dark": "#F1EDE6", // text on deep sections
+        "on-dark-soft": "#B3AB9F", // secondary text on deep sections
+        "on-dark-border": "#2E2822", // hairlines on deep sections
       },
 
       fontFamily: {
@@ -32,6 +34,11 @@ const config: Config = {
 
       maxWidth: {
         content: "1100px",
+      },
+
+      boxShadow: {
+        "glow-ember": "0 0 28px rgba(192, 90, 43, 0.35)",
+        "glow-ember-lg": "0 0 40px rgba(192, 90, 43, 0.5)",
       },
 
       keyframes: {

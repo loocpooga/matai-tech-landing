@@ -39,7 +39,7 @@ export default function PlatformsSection() {
         <Reveal>
           <div className="flex items-center gap-3 mb-7">
             <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-on-dark-soft font-medium">
+            <span className="text-sm text-ember-bright font-medium">
               Tools I work with
             </span>
           </div>
@@ -79,7 +79,7 @@ export default function PlatformsSection() {
                     {group.platforms.map((platform) => (
                       <div
                         key={platform.name}
-                        className="bg-bg-raised rounded-md p-3 border border-transparent hover:border-ember/40 transition-colors duration-300 flex flex-col items-center justify-center gap-2 aspect-square"
+                        className="bg-cream rounded-md p-3 border border-transparent hover:border-ember/60 transition-colors duration-300 flex flex-col items-center justify-center gap-2 aspect-square"
                       >
                         <div className="relative w-9 h-9">
                           <Image
@@ -89,7 +89,7 @@ export default function PlatformsSection() {
                             className="object-contain"
                           />
                         </div>
-                        <span className="text-[10px] text-ink-soft text-center font-medium leading-tight">
+                        <span className="text-[10px] text-[#5A5651] text-center font-medium leading-tight">
                           {platform.name}
                         </span>
                       </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import MataiChatWidget from "./components/MataiChatWidget";
@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     "home services automation",
     "workflow automation",
   ],
+};
+
+export const viewport: Viewport = {
+  themeColor: "#151210",
 };
 
 export default function RootLayout({

@@ -3,19 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --bg: #F4F1EC;
-  --bg-border: #DED8CE;
-  --ink: #232323;
-  --ink-soft: #5A5651;
-  --ink-muted: #7A756E;
+  --bg: #151210;
+  --bg-border: #2E2822;
+  --cream: #F1EDE6;
+  --ink-soft: #B3AB9F;
+  --ink-muted: #8A8175;
   --ember: #C05A2B;
-  --ember-deep: #A34A22;
-  --on-dark: #F1EDE6;
-  --on-dark-soft: #A9A39A;
+  --ember-bright: #E17A4C;
 }
 
 body {
-  color: var(--ink);
+  color: var(--cream);
   background: var(--bg);
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -45,6 +43,13 @@ html {
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
 
+  /* Faint blueprint grid for hero / feature panels */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(241, 237, 230, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(241, 237, 230, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
 }
 
 /* Navigation underline animation */
@@ -58,7 +63,7 @@ html {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--ink);
+  background: var(--cream);
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-link:hover::after {
@@ -67,15 +72,15 @@ html {
 
 /* Focus states */
 *:focus-visible {
-  outline: 2px solid var(--ember);
+  outline: 2px solid var(--ember-bright);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(192, 90, 43, 0.18);
-  color: var(--ink);
+  background: rgba(192, 90, 43, 0.35);
+  color: var(--cream);
 }
 
 a, button {

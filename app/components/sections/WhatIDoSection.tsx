@@ -29,7 +29,7 @@ export default function WhatIDoSection() {
         <Reveal>
           <div className="flex items-center gap-3 mb-7">
             <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-ember-deep font-medium">
+            <span className="text-sm text-ember-bright font-medium">
               What I do
             </span>
           </div>
@@ -37,7 +37,7 @@ export default function WhatIDoSection() {
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Left: the offer */}
             <div className="lg:col-span-2">
-              <h2 className="text-3xl md:text-4xl text-ink mb-6 text-balance">
+              <h2 className="text-3xl md:text-4xl text-cream mb-6 text-balance">
                 One job: make your systems work like one system.
               </h2>
               <p className="text-ink-soft leading-relaxed mb-8">
@@ -64,7 +64,7 @@ export default function WhatIDoSection() {
                     key={point.title}
                     className="border-t border-bg-border pt-6"
                   >
-                    <h3 className="text-lg text-ink mb-2">{point.title}</h3>
+                    <h3 className="text-lg text-cream mb-2">{point.title}</h3>
                     <p className="text-ink-soft text-sm leading-relaxed">
                       {point.body}
                     </p>
@@ -74,7 +74,7 @@ export default function WhatIDoSection() {
 
               {/* Secondary capabilities, deliberately quiet */}
               <div className="mt-12 bg-bg-raised border border-bg-border rounded-lg p-6">
-                <div className="text-sm text-ink mb-3 font-medium">
+                <div className="text-sm text-cream mb-3 font-medium">
                   Things I can also build, if the job calls for it
                 </div>
                 <ul className="space-y-2">

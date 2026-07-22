@@ -9,7 +9,7 @@ export default function ContactSection() {
         <div className="text-center mb-12">
           <div className="flex items-center gap-3 mb-7 justify-center">
             <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-on-dark-soft font-medium">
+            <span className="text-sm text-ember-bright font-medium">
               Get in touch
             </span>
             <span className="w-8 h-px bg-ember" />

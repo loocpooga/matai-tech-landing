@@ -23,10 +23,11 @@ export default function Button({
     "inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 focus-visible:ring-offset-bg";
 
   const variants = {
-    primary: "bg-ember text-white hover:bg-ember-deep",
-    secondary: "bg-ink text-on-dark hover:bg-black",
+    primary:
+      "bg-ember text-white hover:bg-ember-deep shadow-glow-ember hover:shadow-glow-ember-lg transition-shadow",
+    secondary: "bg-cream text-ink hover:bg-white",
     ghost:
-      "bg-transparent border border-bg-border text-ink hover:border-ink-muted",
+      "bg-transparent border border-bg-border text-cream hover:border-ink-muted",
   };
 
   const sizes = {

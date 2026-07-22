@@ -8,13 +8,13 @@ export default function WorkflowSection() {
         <Reveal>
           <div className="flex items-center gap-3 mb-7">
             <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-ember-deep font-medium">
+            <span className="text-sm text-ember-bright font-medium">
               Watch one run
             </span>
           </div>
 
           <div className="max-w-2xl mb-10">
-            <h2 className="text-3xl md:text-4xl text-ink mb-5 text-balance">
+            <h2 className="text-3xl md:text-4xl text-cream mb-5 text-balance">
               This is what &quot;automated&quot; actually looks like.
             </h2>
             <p className="text-ink-soft leading-relaxed">
@@ -45,7 +45,7 @@ export default function WorkflowSection() {
               },
             ].map((h) => (
               <div key={h.title} className="border-t border-bg-border pt-5">
-                <div className="text-sm text-ink font-medium mb-2">
+                <div className="text-sm text-cream font-medium mb-2">
                   {h.title}
                 </div>
                 <div className="text-sm text-ink-muted leading-relaxed">

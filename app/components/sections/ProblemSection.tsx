@@ -26,7 +26,7 @@ export default function ProblemSection() {
         <Reveal>
           <div className="flex items-center gap-3 mb-7">
             <span className="w-8 h-px bg-ember" />
-            <span className="text-sm text-on-dark-soft font-medium">
+            <span className="text-sm text-ember-bright font-medium">
               Sound familiar?
             </span>
           </div>
