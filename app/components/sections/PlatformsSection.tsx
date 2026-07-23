@@ -6,7 +6,7 @@ const groups = [
     label: "CRMs",
     platforms: [
       { name: "Salesforce", logo: "/logos/salesforce.svg" },
-      { name: "HubSpot", logo: "/logos/hubspot.jpeg" },
+      { name: "HubSpot", logo: "/logos/hubspot.png" },
       { name: "Pipedrive", logo: "/logos/pipedrive.svg" },
       { name: "GoHighLevel", logo: "/logos/gohighlevel-2.png" },
     ],
@@ -14,12 +14,12 @@ const groups = [
   {
     label: "Field & trade tools",
     platforms: [
-      { name: "JobNimbus", logo: "/logos/jobnimbus.jpeg" },
-      { name: "AccuLynx", logo: "/logos/acculynx.jpeg" },
+      { name: "JobNimbus", logo: "/logos/jobnimbus.png" },
+      { name: "AccuLynx", logo: "/logos/acculynx.png" },
       { name: "Leap", logo: "/logos/leap.png" },
-      { name: "Housecall Pro", logo: "/logos/housecallpro.jpeg" },
+      { name: "Housecall Pro", logo: "/logos/housecallpro.png" },
       { name: "Enerflo", logo: "/logos/enerflo.png" },
-      { name: "SubcontractorHub", logo: "/logos/subcontractor-hub.jpeg" },
+      { name: "SubcontractorHub", logo: "/logos/subcontractor-hub.png" },
     ],
   },
   {
@@ -27,7 +27,7 @@ const groups = [
     platforms: [
       { name: "Google Sheets", logo: "/logos/google-sheets.png" },
       { name: "Monday.com", logo: "/logos/monday.com.svg" },
-      { name: "Zapier", logo: "/logos/zapier.jpeg" },
+      { name: "Zapier", logo: "/logos/zapier.png" },
     ],
   },
 ];
@@ -79,9 +79,9 @@ export default function PlatformsSection() {
                     {group.platforms.map((platform) => (
                       <div
                         key={platform.name}
-                        className="bg-paper rounded-md p-3 border border-rule hover:border-deep transition-colors duration-300 flex flex-col items-center justify-center gap-2 aspect-square"
+                        className="bg-paper rounded-md p-3 border border-rule hover:border-deep transition-colors duration-300 flex flex-col items-center justify-center gap-2.5 aspect-square"
                       >
-                        <div className="relative w-9 h-9">
+                        <div className="relative h-9 w-[70%]">
                           <Image
                             src={platform.logo}
                             alt={`${platform.name} logo`}
