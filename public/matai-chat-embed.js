@@ -2,7 +2,7 @@
   var MataiChat = {
     config: {
       position: "bottom-right",
-      primaryColor: "#0A6E6E",
+      primaryColor: "#0E4A33",
       baseUrl: "https://matai-ai-agent.vercel.app",
     },
     isOpen: false,
@@ -17,22 +17,21 @@
       // --- Bubble button ---
       var bubble = document.createElement("div");
       bubble.id = "matai-chat-bubble";
-      bubble.setAttribute("aria-label", "Open AI assistant");
+      bubble.setAttribute("aria-label", "Open chat with Fin");
       bubble.setAttribute("role", "button");
       bubble.setAttribute("tabindex", "0");
 
       bubble.innerHTML = `
         <span id="matai-bubble-inner" class="matai-bubble-closed">
           <span class="matai-bubble-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
+            <svg width="15" height="15" viewBox="0 0 100 100" fill="#F8FBF6">
+              <path d="M8 20H26L42 40V66L26 46V94H8ZM92 20H74L58 40V66L74 46V94H92ZM50 4L58 25H55V94H45V25H42Z"/>
             </svg>
           </span>
-          <span class="matai-bubble-label">Ask AI</span>
-          <span class="matai-bubble-dot"></span>
+          <span class="matai-bubble-label">Ask Fin</span>
         </span>
         <span id="matai-bubble-close" class="matai-bubble-x" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F8FBF6" stroke-width="2" stroke-linecap="round">
             <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
           </svg>
         </span>
@@ -46,7 +45,7 @@
       iframe.id = "matai-chat-iframe";
       iframe.src = this.config.baseUrl + "/widget";
       iframe.allow = "clipboard-write";
-      iframe.setAttribute("title", "Matai AI Assistant");
+      iframe.setAttribute("title", "Fin, the Matai Tech assistant");
 
       container.appendChild(iframe);
       document.body.appendChild(bubble);
@@ -63,21 +62,16 @@
       var style = document.createElement("style");
       var primaryColor = this.config.primaryColor;
       var pos = this.config.position === "bottom-left"
-        ? "bottom: 24px; left: 24px;"
-        : "bottom: 24px; right: 24px;";
+        ? "bottom: 20px; left: 20px;"
+        : "bottom: 20px; right: 20px;";
       var containerPos = this.config.position === "bottom-left"
-        ? "bottom: 96px; left: 24px;"
-        : "bottom: 96px; right: 24px;";
+        ? "bottom: 76px; left: 20px;"
+        : "bottom: 76px; right: 20px;";
 
       style.textContent = `
-        @keyframes matai-dot-pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.6; transform: scale(0.85); }
-        }
-
         @keyframes matai-slide-up {
-          from { opacity: 0; transform: translateY(12px) scale(0.97); }
-          to   { opacity: 1; transform: translateY(0)   scale(1); }
+          from { opacity: 0; transform: translateY(10px); }
+          to   { opacity: 1; transform: translateY(0); }
         }
 
         /* ---- Bubble ---- */
@@ -96,45 +90,32 @@
           -webkit-tap-highlight-color: transparent;
         }
 
-        /* Pill default state */
         #matai-bubble-inner {
           display: flex;
           align-items: center;
           gap: 8px;
           background: ${primaryColor};
-          color: white;
-          padding: 0 18px 0 14px;
-          height: 48px;
-          border-radius: 24px;
-          box-shadow: 0 4px 20px rgba(10, 110, 110, 0.35);
-          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          color: #F8FBF6;
+          padding: 0 16px 0 13px;
+          height: 44px;
+          border-radius: 2px;
+          border: 1px solid rgba(20, 32, 26, 0.4);
+          transition: background 0.2s ease, transform 0.15s ease;
           user-select: none;
-          position: relative;
-          overflow: hidden;
         }
 
-        #matai-bubble-inner::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: white;
-          opacity: 0;
-          border-radius: inherit;
-          transition: opacity 0.2s ease;
-        }
-
-        #matai-chat-bubble:hover #matai-bubble-inner::before,
-        #matai-chat-bubble:focus-visible #matai-bubble-inner::before {
-          opacity: 0.08;
-        }
-
-        #matai-chat-bubble:hover #matai-bubble-inner {
-          box-shadow: 0 6px 28px rgba(10, 110, 110, 0.45);
-          transform: translateY(-1px);
+        #matai-chat-bubble:hover #matai-bubble-inner,
+        #matai-chat-bubble:focus-visible #matai-bubble-inner {
+          background: #0A3A28;
         }
 
         #matai-chat-bubble:active #matai-bubble-inner {
-          transform: translateY(0) scale(0.97);
+          transform: translateY(1px);
+        }
+
+        #matai-chat-bubble:focus-visible #matai-bubble-inner {
+          outline: 2px solid ${primaryColor};
+          outline-offset: 2px;
         }
 
         .matai-bubble-icon {
@@ -144,66 +125,33 @@
         }
 
         .matai-bubble-label {
-          font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
-          font-size: 13px;
+          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          font-size: 11px;
           font-weight: 600;
-          letter-spacing: 0.01em;
+          letter-spacing: 0.09em;
+          text-transform: uppercase;
           white-space: nowrap;
-          transition: opacity 0.2s ease, width 0.25s ease;
-          overflow: hidden;
         }
 
-        .matai-bubble-dot {
-          width: 7px;
-          height: 7px;
-          background: #4ade80;
-          border-radius: 50%;
-          flex-shrink: 0;
-          animation: matai-dot-pulse 2.5s ease-in-out infinite;
-          box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.25);
-        }
-
-        /* Close X — hidden by default */
+        /* Close state */
         #matai-bubble-close {
           display: none;
           align-items: center;
           justify-content: center;
           background: ${primaryColor};
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          box-shadow: 0 4px 20px rgba(10, 110, 110, 0.35);
-          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          overflow: hidden;
-        }
-
-        #matai-bubble-close::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: white;
-          opacity: 0;
-          border-radius: inherit;
-          transition: opacity 0.2s ease;
-        }
-
-        #matai-chat-bubble:hover #matai-bubble-close::before {
-          opacity: 0.08;
+          width: 44px;
+          height: 44px;
+          border-radius: 2px;
+          border: 1px solid rgba(20, 32, 26, 0.4);
+          transition: background 0.2s ease;
         }
 
         #matai-chat-bubble:hover #matai-bubble-close {
-          box-shadow: 0 6px 28px rgba(10, 110, 110, 0.45);
-          transform: translateY(-1px);
+          background: #0A3A28;
         }
 
-        #matai-chat-bubble.matai-open #matai-bubble-inner {
-          display: none;
-        }
-
-        #matai-chat-bubble.matai-open #matai-bubble-close {
-          display: flex;
-        }
+        #matai-chat-bubble.matai-open #matai-bubble-inner { display: none; }
+        #matai-chat-bubble.matai-open #matai-bubble-close { display: flex; }
 
         /* ---- Chat container ---- */
         #matai-chat-container {
@@ -211,20 +159,19 @@
           ${containerPos}
           width: 400px;
           height: 600px;
-          max-width: calc(100vw - 48px);
-          max-height: calc(100vh - 112px);
-          background: white;
-          border-radius: 16px;
-          box-shadow: 0 12px 48px rgba(15, 15, 15, 0.18), 0 2px 12px rgba(15, 15, 15, 0.1);
+          max-width: calc(100vw - 40px);
+          max-height: calc(100vh - 96px);
+          background: #F8FBF6;
+          border-radius: 2px;
+          border: 1.5px solid #14201A;
           overflow: hidden;
           z-index: 999998;
           display: none;
-          border: 1px solid rgba(15, 15, 15, 0.06);
         }
 
         #matai-chat-container.open {
           display: block !important;
-          animation: matai-slide-up 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: matai-slide-up 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         #matai-chat-iframe {
@@ -261,12 +208,12 @@
         container.classList.remove("open");
         container.style.display = "none";
         bubble.classList.remove("matai-open");
-        bubble.setAttribute("aria-label", "Open AI assistant");
+        bubble.setAttribute("aria-label", "Open chat with Fin");
         this.isOpen = false;
       } else {
         container.classList.add("open");
         bubble.classList.add("matai-open");
-        bubble.setAttribute("aria-label", "Close AI assistant");
+        bubble.setAttribute("aria-label", "Close chat");
         this.isOpen = true;
       }
     },
@@ -278,7 +225,7 @@
       container.classList.remove("open");
       container.style.display = "none";
       bubble.classList.remove("matai-open");
-      bubble.setAttribute("aria-label", "Open AI assistant");
+      bubble.setAttribute("aria-label", "Open chat with Fin");
       this.isOpen = false;
     },
   };
@@ -295,7 +242,7 @@
   if (script && script.hasAttribute("data-auto-init")) {
     MataiChat.init({
       position: script.getAttribute("data-position") || "bottom-right",
-      primaryColor: script.getAttribute("data-color") || "#0A6E6E",
+      primaryColor: script.getAttribute("data-color") || "#0E4A33",
     });
   }
 })();
