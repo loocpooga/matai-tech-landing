@@ -8,6 +8,7 @@ export default function MataiChatWidget() {
     const script = document.createElement("script");
     script.src = "/matai-chat-embed.js";
     script.setAttribute("data-auto-init", "");
+    script.setAttribute("data-color", "#0E4A33");
     script.async = true;
 
     document.body.appendChild(script);
