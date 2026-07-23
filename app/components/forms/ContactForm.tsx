@@ -25,26 +25,29 @@ export default function ContactForm() {
     e.preventDefault();
     setFormStatus("submitting");
 
+    // Honeypot: hidden field only bots fill in
+    const botcheck =
+      (e.currentTarget as HTMLFormElement).querySelector<HTMLInputElement>(
+        'input[name="botcheck"]'
+      )?.value || "";
+
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "02927c79-7bd3-4949-9540-863dc1e7a34c",
-          subject: "New contact form submission from mataitech.co",
-          from_name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          message: formData.message,
-        }),
-      });
+      const response = await fetch(
+        "https://n8n.mataitech.co/webhook/contact-form-5db34a2e7a94be6800f5c805088ad8a7",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            message: formData.message,
+            botcheck,
+          }),
+        }
+      );
 
-      const result = await response.json();
-
-      if (result.success) {
+      if (response.ok) {
         setFormStatus("success");
         setFormData({ name: "", email: "", company: "", message: "" });
         setTimeout(() => setFormStatus("idle"), 5000);
@@ -71,6 +74,15 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot: invisible to humans, bots fill it and get dropped */}
+      <input
+        type="text"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className={labelClass}>
