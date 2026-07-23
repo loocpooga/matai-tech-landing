@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Button from "../ui/Button";
+import MataiMark from "../ui/MataiMark";
 
 const navLinks = [
   { href: "#what-i-do", label: "What I do" },
@@ -30,7 +31,8 @@ export default function Navigation() {
       <div className="max-w-content mx-auto px-[18px]">
         <div className="flex justify-between items-center pt-4 pb-2.5">
           {/* Wordmark */}
-          <a href="#" className="flex items-baseline">
+          <a href="#" className="flex items-center gap-2.5 text-ink">
+            <MataiMark size={22} />
             <span className="font-display font-bold text-[21px] leading-none tracking-[-0.02em] text-ink">
               Matai Tech<span className="text-deep">.</span>
             </span>

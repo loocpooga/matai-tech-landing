@@ -1,3 +1,5 @@
+import MataiMark from "../ui/MataiMark";
+
 const footerLinks = [
   { href: "#what-i-do", label: "What I do" },
   { href: "#proof", label: "Proof" },
@@ -13,8 +15,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="font-display font-bold text-[21px] tracking-[-0.02em] text-ink mb-3">
-              Matai Tech<span className="text-deep">.</span>
+            <div className="flex items-center gap-2.5 mb-3 text-ink">
+              <MataiMark size={22} />
+              <span className="font-display font-bold text-[21px] leading-none tracking-[-0.02em] text-ink">
+                Matai Tech<span className="text-deep">.</span>
+              </span>
             </div>
             <p className="text-ink-soft text-sm leading-relaxed max-w-sm">
               Systems and automation for trades businesses. One person, doing
